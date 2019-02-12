@@ -22,10 +22,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://Que-App:Project3@ds127825.mlab.com:27825/heroku_0x6mskzw",
-    {
-        useMongoClient: true
-    })
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://Que-App:Project3@ds127825.mlab.com:27825/heroku_0x6mskzw")
 
 // Define API routes here
 
