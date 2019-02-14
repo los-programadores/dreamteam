@@ -5,6 +5,9 @@ const passport = require("passport");
 const path = require('path');
 
 const users = require("./routes/api/users");
+
+const port = process.env.PORT || 5000; // process.env.port is Heroku's port 
+
 const app = express();
 // Bodyparser middleware
 app.use(
@@ -14,7 +17,7 @@ app.use(
 );
 app.use(bodyParser.json());
 // DB Config
-const db = require("./config/keys").mongoURI;
+const db = process.env.MONGODB_URI || require("./config/keys").mongoURI;
 // Connect to MongoDB
 mongoose
     .connect(
@@ -40,7 +43,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-const port = process.env.PORT || 5000; // process.env.port is Heroku's port 
+// start the server
 app.listen(port, () => console.log(`Server is working on ${port} !`));
 
-//this is a test to push content
