@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 class Navbar extends Component {
     render() {
         return (
@@ -13,8 +14,8 @@ class Navbar extends Component {
                             }}
                             className="col s5 brand-logo center black-text"
                         >
-                            <i className="material-icons"></i>
-                            Project 3
+                            <i className="material-icons">code</i>
+                            MERN
             </Link>
                     </div>
                 </nav>
@@ -22,4 +23,5 @@ class Navbar extends Component {
         );
     }
 }
+
 export default Navbar;

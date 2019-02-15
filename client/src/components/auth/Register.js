@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+
 class Register extends Component {
     constructor() {
         super();
@@ -30,27 +31,33 @@ class Register extends Component {
             });
         }
     }
+
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
+
     onSubmit = e => {
         e.preventDefault();
+
         const newUser = {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
             password2: this.state.password2
         };
+
         this.props.registerUser(newUser, this.props.history);
     };
+
     render() {
         const { errors } = this.state;
+
         return (
             <div className="container">
                 <div className="row">
                     <div className="col s8 offset-s2">
                         <Link to="/" className="btn-flat waves-effect">
-                            <i className="material-icons left">Project 3</i> Back to
+                            <i className="material-icons left">keyboard_backspace</i> Back to
                             home
             </Link>
                         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -139,17 +146,19 @@ class Register extends Component {
         );
     }
 }
+
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
     auth: state.auth,
     errors: state.errors
 });
+
 export default connect(
     mapStateToProps,
     { registerUser }
 )(withRouter(Register));
-
