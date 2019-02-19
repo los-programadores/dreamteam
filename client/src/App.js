@@ -6,8 +6,6 @@ import SignUpUser from "./components/SignUpUser";
 import SignUpGuide from "./components/SignUpGuide";
 import PrivateRoute from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
-// import API from "./utils/API";
-
 
 
 
@@ -23,7 +21,6 @@ class App extends Component {
           currentUser: user,
           loading: false
         });
-        // API.saveUser(this.state.currentUser);
       } else {
         this.setState({
           authenticated: false,
