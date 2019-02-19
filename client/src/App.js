@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import Home from "./components/Home";
 import LogIn from "./components/LogIn";
-import SignUp from "./components/SignUp";
+import SignUpUser from "./components/SignUpUser";
+import SignUpGuide from "./components/SignUpGuide";
 import PrivateRoute from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
-
 
 
 
@@ -36,7 +35,7 @@ class App extends Component {
     const { authenticated, loading } = this.state;
 
     if (loading) {
-      return <p>Loading..</p>;
+      return <p>Loading...</p>;
     }
 
     return (
@@ -44,7 +43,8 @@ class App extends Component {
         <div>
           <PrivateRoute exact path="/" component={Home} authenticated={this.state.authenticated} />
           <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/signup" component={SignUpUser} />
+          <Route exact path="/signup-guide" component={SignUpGuide} />
         </div>
       </Router>
     )

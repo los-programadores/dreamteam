@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import firebaseauth from "../firebase";
+import API from "../utils/API";
 
-class SignUp extends Component {
+class SignUpUser extends Component {
   handleSignUp = async event => {
     event.preventDefault();
     const { email, password } = event.target.elements;
@@ -12,6 +13,7 @@ class SignUp extends Component {
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
+      API.saveUser(user.user);
     } catch (error) {
       alert(error);
     }
@@ -41,10 +43,11 @@ class SignUp extends Component {
           </label>
           <button type="submit">Sign Up</button>
         </form>
+        <button><Link to="/signup-guide">Sign up as a guide</Link></button>
         <button><Link to="/login">Login</Link></button>
       </div>
     );
   }
 }
 
-export default withRouter(SignUp);
+export default withRouter(SignUpUser);
