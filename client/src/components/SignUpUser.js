@@ -13,12 +13,7 @@ class SignUpUser extends Component {
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
-      firebaseauth.auth().onAuthStateChanged(user => {
-        if (user) {
-          API.saveUser(user);
-        }
-      });
-
+      API.saveUser(user.user);
     } catch (error) {
       alert(error);
     }
