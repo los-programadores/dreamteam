@@ -13,11 +13,7 @@ class SignUpGuide extends Component {
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
-      firebaseauth.auth().onAuthStateChanged(user => {
-        if (user) {
-          API.saveGuide(user);
-        }
-      });
+      API.saveGuide(user.user);
     } catch (error) {
       alert(error);
     }
