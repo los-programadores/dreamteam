@@ -16,7 +16,7 @@ export default {
     return axios.get("/api/guides");
   },
 
-  // Saves a user to the database
+  // Saves a guide to the database
   saveGuide: function (userData) {
     return axios.post("/api/guides", userData);
   }
