@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import firebaseauth from "../firebase"
+import { Link } from "react-router-dom";
+
 import API from "../utils/API";
 
 class Home extends Component {
@@ -23,11 +25,15 @@ class Home extends Component {
     });
   }
 
+  createVoyage = () => {
+
+  }
   render() {
     return (
       <div>
         <h1>Welcome {this.state.userName}</h1>
         <button onClick={this.handleLogOut}>Log Out</button>
+        <button><Link to="/voyages">To Voyage</Link></button>
       </div>
     )
   }
