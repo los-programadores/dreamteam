@@ -7,13 +7,15 @@ import API from "../utils/API";
 class SignUpUser extends Component {
   handleSignUp = async event => {
     event.preventDefault();
-    const { email, password } = event.target.elements;
+    const { email, password, name } = event.target.elements;
     try {
       const user = await firebaseauth
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
-      API.saveUser(user.user);
+      const userData = { uid: user.user.uid, name: name.value }
+      console.log(userData)
+      API.saveUser(userData);
     } catch (error) {
       alert(error);
     }
@@ -39,6 +41,14 @@ class SignUpUser extends Component {
               name="password"
               type="password"
               placeholder="Password"
+            />
+          </label>
+          <label>
+            Full Name
+            <input
+              name="name"
+              type="text"
+              placeholder="Jason Borne"
             />
           </label>
           <button type="submit">Sign Up</button>

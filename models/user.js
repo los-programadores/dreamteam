@@ -5,8 +5,13 @@ const userSchema = new Schema({
   uid: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
+
 });
 
 const User = mongoose.model("User", userSchema);
