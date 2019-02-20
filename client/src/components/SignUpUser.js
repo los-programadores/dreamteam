@@ -72,12 +72,11 @@ class SignUpUser extends Component {
                   width: "140px",
                   borderRadius: "50px",
                   letterSpacing: "1px",
-                  padding: "15px"
+                  padding: "10px"
                 }}
                 type="submit"
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                Sign up
+              >Sign up
                 </button>
 
             </form>
