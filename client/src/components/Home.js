@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebaseauth from "../firebase"
+import { Link } from "react-router-dom";
 
 
 class Home extends Component {
@@ -17,8 +18,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Welcom {}</h1>
+        <h1>Welcome </h1>
         <button onClick={this.handleLogOut}>Log Out</button>
+        <button><Link to="/voyages">To Voyage</Link></button>
       </div>
     )
   }
