@@ -7,11 +7,19 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
+<<<<<<< HEAD
   name: {
     type: String,
     required: true,
   },
 
+=======
+
+  name: {
+    type: String,
+    required: true,
+  }
+>>>>>>> master
 });
 
 const User = mongoose.model("User", userSchema);
