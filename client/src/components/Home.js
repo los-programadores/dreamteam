@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import firebaseauth from "../firebase"
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
 
-=======
 import API from "../utils/API";
->>>>>>> master
 
 class Home extends Component {
   state = { uid: null, userName: null };
@@ -34,11 +31,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
-        <h1>Welcome </h1>
-=======
         <h1>Welcome {this.state.userName}</h1>
->>>>>>> master
         <button onClick={this.handleLogOut}>Log Out</button>
         <button><Link to="/voyages">To Voyage</Link></button>
       </div>

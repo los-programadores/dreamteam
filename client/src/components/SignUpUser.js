@@ -14,15 +14,10 @@ class SignUpUser extends Component {
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
-<<<<<<< HEAD
-      const userData = { uid: user.user.uid, name: name.value }
-      console.log(userData)
-=======
       const userData = {
         uid: user.user.uid,
         name: name.value
       }
->>>>>>> master
       API.saveUser(userData);
     } catch (error) {
       alert(error);
@@ -31,40 +26,6 @@ class SignUpUser extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <h1>Sign up</h1>
-        <h6><Link to="/">Go Home</Link></h6>
-        <form onSubmit={this.handleSignUp}>
-          <label>
-            Email
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-            />
-          </label>
-          <label>
-            Password
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-            />
-          </label>
-          <label>
-            Full Name
-            <input
-              name="name"
-              type="text"
-              placeholder="Jason Borne"
-            />
-          </label>
-          <button type="submit">Sign Up</button>
-        </form>
-        <button><Link to="/signup-guide">Sign up as a guide</Link></button>
-        <button><Link to="/login">Login</Link></button>
-=======
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -123,7 +84,6 @@ class SignUpUser extends Component {
             <button><Link to="/signup-guide">Sign up as a guide</Link></button>
           </div>
         </div>
->>>>>>> master
       </div>
     );
   }
