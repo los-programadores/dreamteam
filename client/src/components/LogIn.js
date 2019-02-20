@@ -20,30 +20,53 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Login</h1>
-        <h6><Link to="/">Go Home</Link></h6>
-        <form onSubmit={this.handleSignUp}>
-          <label>
-            Email
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-            />
-          </label>
-          <label>
-            Password
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-            />
-          </label>
-          <button type="submit">Login</button>
-        </form>
-        <button><Link to="/signup">Sign Up</Link></button>
-      </div>
+      <div className="container">
+        <div style={{ marginTop: "4rem" }} className="row">
+          <div className="col sm8 offset-s2">
+
+            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <h4>
+                <b>Login</b> below
+              </h4>
+              <p className="grey-text text-darken-1">
+                Don't have an account? <Link to="/signup">Register</Link>
+              </p>
+            </div>
+
+            <form onSubmit={this.handleSignUp}>
+              <div className="input-field col s5">
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div className="input-field col s5">
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
+
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "50px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Login
+                </button>
+              </div>            </form>
+          </div>
+        </div>
+      </div >
     );
   }
 }
