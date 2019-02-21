@@ -1,4 +1,10 @@
-.App{
+.container{
+  color: black;
+}
+
+
+
+/* .App{
   margin: 0;
   padding: 0;
 }
@@ -24,4 +30,4 @@
 
 .voyages-data{
   text-align: center;
-}
+} */

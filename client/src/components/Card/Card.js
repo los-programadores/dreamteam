@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import Carousel from 'react-bootstrap/Carousel';
 
 
 function CardComponent(props){
@@ -18,7 +17,7 @@ function CardComponent(props){
                         <br></br>
                         Expertise: {props.expertise}
                     </Card.Text>
-                    <Button variant="primary"><Link to="/gchat">Hire me for ${props.hourlyRate}</Link></Button>
+                    <Button variant="primary"><Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button>
                 </Card.Body>
             </Card>
 
