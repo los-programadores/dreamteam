@@ -12,7 +12,6 @@ export default class Voyages extends Component {
         this.autocompleteInput = React.createRef();
         this.autocomplete = null;
         this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
     }
     componentDidMount() {
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
