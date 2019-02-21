@@ -38,7 +38,11 @@ class Home extends Component {
   render() {
     return (
       <Container className="container">
-        <button onClick={this.handleLogOut}>Log Out</button>
+      <Row>
+        <Col>
+        <button style={{float: "right"}} onClick={this.handleLogOut}>Log Out</button>
+        </Col>
+      </Row>
         {console.log(this.state)}
         <Row className="UserProfile">
           <Images></Images>
