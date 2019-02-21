@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import firebaseauth from "../firebase"
 import { Link } from "react-router-dom";
+import CarouselComponent from "./Carousel/CarouselComponent";
+import "../styles/GuideSelect.css"
 
 
 class Guide extends Component {
@@ -11,9 +13,12 @@ class Guide extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="guide">
                 <h1>Select your Guide</h1>
+                <CarouselComponent />
                 <button><Link to="/gchat">Select Guide</Link></button>
+
+
             </div>
         )
     }
