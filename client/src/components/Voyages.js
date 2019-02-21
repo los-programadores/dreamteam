@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import firebaseauth from "../firebase"
+import firebaseauth from "../firebase";
 import { Link } from "react-router-dom";
 
 
