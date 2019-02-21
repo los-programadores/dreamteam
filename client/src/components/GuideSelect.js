@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import firebaseauth from "../firebase"
 import { Link } from "react-router-dom";
-import CardComponent from "./Card/Card";
-import "../styles/GuideSelect.css";
+
 import guide from "./guideInfo/guideInfo";
+
+import CardComponent from "./Card/Card";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-{console.log(guide)}
+
+import "../styles/GuideSelect.css";
 const guideComponent = guide.map(guideobject  => <CardComponent {...guideobject}/> )
+
 class Guide extends Component {
 
 
@@ -18,15 +21,21 @@ class Guide extends Component {
 
     render() {
         return (
-            <div className="guide">
-                <h1 className="text-center">Select your Guide</h1>
-                <hr></hr>
-                <Row>
+            <Row>
+                <Col>
                     <Col>
-                        {guideComponent}
+                        <h1 className="text-center">Select your Guide</h1>
+                        <hr></hr>
                     </Col>
-                </Row>
-            </div>
+                    <Col>
+                        <Row className="guide">
+                            <Col>
+                                {guideComponent}
+                            </Col>
+                        </Row>
+                    </Col>
+                </Col>
+            </Row>
         )
     }
 }

@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import firebaseauth from "../firebase";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 class Navbar extends Component {
+
+    handleLogOut = () => {
+        firebaseauth.auth().signOut().then(function () {
+          // Sign-out successful.
+        }).catch(function (error) {
+          throw error
+        });
+      }
+
     constructor() {
         super();
 
@@ -38,7 +49,7 @@ class Navbar extends Component {
                 <header className="cd-header">
                     <div className="header-wrapper">
                         <div className="logo-wrap">
-                            <a href="/" className="hover-target"><span>Que</span>?</a>
+                            <a href="/" className="hover-target"><span>Hello World</span></a>
                         </div>
                         <div className="nav-but-wrap">
                             <div className="menu-icon hover-target" onClick={this.showMenu}>
@@ -59,9 +70,10 @@ class Navbar extends Component {
                                             this.dropdownMenu = element;
                                         }}
                                     >
-                                        <button className="nav-item"> Voyages </button>
-                                        <button className="nav-item"> Itinerary </button>
-                                        <button className="nav-item"> Chat </button>
+                                        <button className="nav-item"><Link to="/home">Home</Link></button>
+                                        <button className="nav-item"><Link to="/voyages">Voyages</Link></button>
+                                        <button className="nav-item"><Link to="/gchat">Chat</Link></button>
+                                        <button className="nav-item" onClick={this.handleLogOut}>Log Out</button>
                                     </div>
                                 )
                                 : (

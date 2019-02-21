@@ -30,8 +30,8 @@ export default class Voyages extends Component {
     render() {
         return (
             <div>
-                <h1>Welcom to the Voyages Page</h1>
-                <h2>build your Voyage Below:</h2>
+                <h1 className="text-center">Welcom to the Voyages Page</h1>
+                <h2 className="text-center" >build your Voyage Below:</h2>
                 <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Location"
                     type="text"></input>
                 <h2>{this.state.chosenAddress}</h2>

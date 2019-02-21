@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import firebaseauth from "../firebase"
+import firebaseauth from "../firebase";
 import { Link } from "react-router-dom";
+
 import Images from "./Image/Image"
 import Voyages from "./Voyages/Voyages";
 import YourVoyages from "./YourVoyages/YourVoyages";
+import Navbar from "./Navbar"
+
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -38,45 +41,63 @@ class Home extends Component {
   render() {
     return (
       <Container className="container">
-      <Row>
-        <Col>
-        <button style={{float: "right"}} onClick={this.handleLogOut}>Log Out</button>
-        </Col>
-      </Row>
+        <Row>
+          <Col>
+            <Navbar />
+          </Col>
+        </Row>
         {console.log(this.state)}
         <Row className="UserProfile">
+
           <Images></Images>
+
           <Col>
+
             <Row>
               <Col>
-                empty
-            </Col>
+                <hr></hr>
+              </Col>
             </Row>
+
             <Row>
               <Col>
                 <h1>Hello </h1>
               </Col>
             </Row>
+
             <Row>
               <Col>
                 <h3> {this.state.userName} </h3>
               </Col>
             </Row>
+
             <Row>
               <Col>
-                empty
-            </Col>
+                <hr></hr>
+              </Col>
             </Row>
+
           </Col>
+
           <Col>
+            <Row>
+              <Col>
+                <hr></hr>
+              </Col>
+            </Row>
             <Row className="createVoyages">
               <Col>
                 <Voyages />
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <hr></hr>
+              </Col>
+            </Row>
+
           </Col>
         </Row>
-
 
 
         <Row className="yourVoyages">
