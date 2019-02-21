@@ -13,7 +13,7 @@ class SignUpUser extends Component {
       const user = await firebaseauth
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
-      this.props.history.push("/");
+      this.props.history.push("/home");
       const userData = {
         uid: user.user.uid,
         name: name.value

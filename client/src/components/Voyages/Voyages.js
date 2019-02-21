@@ -9,11 +9,11 @@ import Col from "react-bootstrap/Col";
 function Voyages(props) {
     return (
         <Row>
-            <Col md={4}>
-                <Button variant="primary"><Link to="/voyages">To Voyage</Link></Button>
-            </Col>
             <Col>
-                Lorem Ipsum
+                Start your trip by creating you voyage and selecting you tour guide
+            </Col>
+            <Col md={4}>
+                <Button variant="primary"><Link to="/voyages">Create Voyage</Link></Button>
             </Col>
         </Row>
 
