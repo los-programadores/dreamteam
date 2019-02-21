@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 import Landing from "./components/landingPage";
 import LogIn from "./components/LogIn";
 import SignUpUser from "./components/SignUpUser";
@@ -10,6 +11,7 @@ import firebaseauth from "./firebase"
 import Voyages from "./components/Voyages"
 import GuideSelect from "./components/GuideSelect"
 import Chat from "./components/GuideChat"
+
 
 
 
@@ -45,6 +47,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Navbar />
           <PrivateRoute exact path="/home" component={Home} authenticated={this.state.authenticated} />
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={LogIn} />
