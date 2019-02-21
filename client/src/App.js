@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
+import Landing from "./components/landingPage";
 import LogIn from "./components/LogIn";
 import SignUpUser from "./components/SignUpUser";
 import SignUpGuide from "./components/SignUpGuide";
@@ -44,7 +45,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <PrivateRoute exact path="/" component={Home} authenticated={this.state.authenticated} />
+          <PrivateRoute exact path="/home" component={Home} authenticated={this.state.authenticated} />
+          <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/voyages" component={Voyages} />
           <Route exact path="/guides" component={GuideSelect} />
