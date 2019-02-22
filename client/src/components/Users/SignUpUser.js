@@ -28,63 +28,69 @@ class SignUpUser extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col s8 offset-s2">
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
+      <div className="App" style={{
+        backgroundImage: "url('https://cdn.dribbble.com/users/1492844/screenshots/3307274/travel.gif')",
+        backgroundPosition: "bottom",
+        backgroundSize: "65%",
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "white"
+      }}>
+        <div className="container-mark">
+          <div className="row">
+            <div className="col s8 offset-s2">
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <h4>
+                  <b>Register</b> below
                     </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-              <p className="grey-text text-darken-1">
-                Want to become a guide? <Link to="/signup-guide">Sign Up Here!</Link>
-              </p>
-            </div>
-            <form onSubmit={this.handleSignUp}>
-              <div className="input-field col s6">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Full Name"
-                />
+                <p className="grey-text text-darken-1">
+                  Already have an account? <Link to="/login">Log in</Link>
+                </p>
               </div>
-              <div className="input-field col s6">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="password2"
-                  type="password"
-                  placeholder="Confirm Password"
-                />
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}></div>
-              <button
-                style={{
-                  width: "140px",
-                  borderRadius: "50px",
-                  letterSpacing: "1px",
-                  padding: "10px"
-                }}
-                type="submit"
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >Sign up
+              <form onSubmit={this.handleSignUp}>
+                <div className="input-field col s6">
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Full Name"
+                  />
+                </div>
+                <div className="input-field col s6">
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="input-field col s6">
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="input-field col s6">
+                  <input
+                    name="password2"
+                    type="password"
+                    placeholder="Confirm Password"
+                  />
+                </div>
+                <div className="col s12" style={{ paddingLeft: "11.250px" }}></div>
+                <button
+                  style={{
+                    width: "100px",
+                    height: "50px",
+                    borderRadius: "50px",
+                    letterSpacing: "1.5px",
+                    padding: "16px",
+                    fontSize: "12px"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >Sign up
                 </button>
-            </form>
-
+              </form>
+            </div>
           </div>
         </div>
       </div>

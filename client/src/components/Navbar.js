@@ -49,7 +49,8 @@ class Navbar extends Component {
                 <header className="cd-header">
                     <div className="header-wrapper">
                         <div className="logo-wrap">
-                            <a href="/" className="hover-target"><span>Hello World</span></a>
+                            <a href="/" className="hover-target"><span>Hello</span>World</a>
+
                         </div>
                         <div className="nav-but-wrap">
                             <div className="menu-icon hover-target" onClick={this.showMenu}>
