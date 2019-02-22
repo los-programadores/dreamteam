@@ -7,25 +7,23 @@ import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import API from "../../utils/API";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 //css style sheet
 import "../../styles/Home.css"
 
 class Home extends Component {
-  state = { uid: "", userName: "" };
+  state = { uid: null, userName: null };
 
   componentDidMount() {
     firebaseauth.auth().onAuthStateChanged(user => {
-      this.setState({
-        uid: user.uid
-      })
-      API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
+      if (user) {
+        this.setState({
+          uid: user.uid
+        })
+        API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
+      }
     });
   }
-
-  handleLogOut = () => {
-    firebaseauth.auth().signOut()
-  };
 
   createVoyage = () => {
 
@@ -33,7 +31,6 @@ class Home extends Component {
   render() {
     return (
       <Container className="container">
-        <button onClick={this.handleLogOut}>Log Out</button>
         <Row>
           <Col>
             <Navbar />
