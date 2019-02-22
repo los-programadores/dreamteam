@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Landing.css"
+import "../styles/Landing.css";
+import "../styles/LandingBackground.css";
 
 class Landing extends Component {
 
     render() {
         return (
-            <div style={{ height: "70vh" }} className="container valign-wrapper">
+            <div style={{ height: "86vh" }} className="container valign-wrapper">
                 <div className="row">
                     <div className="col s12 center-align">
                         <h4>
@@ -20,10 +21,12 @@ class Landing extends Component {
                             <Link
                                 to="/signup"
                                 style={{
-                                    width: "140px",
+                                    width: "100px",
+                                    height: "50px",
                                     borderRadius: "50px",
                                     letterSpacing: "1.5px",
-                                    padding: "15px"
+                                    padding: "16px",
+                                    fontSize: "12px"
                                 }}
                                 className="btn btn-large waves-effect waves-light hoverable accent-3"
                             >Register
@@ -34,10 +37,12 @@ class Landing extends Component {
                             <Link
                                 to="/login"
                                 style={{
-                                    width: "140px",
+                                    width: "100px",
+                                    height: "50px",
                                     borderRadius: "50px",
-                                    letterSpacing: "1px",
-                                    padding: "15px"
+                                    letterSpacing: "1.5px",
+                                    padding: "16px",
+                                    fontSize: "12px"
 
                                 }}
                                 className="btn btn-large waves-effect waves-light hoverable accent-3 white black-text"
