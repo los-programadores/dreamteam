@@ -7,9 +7,9 @@ router.route("/")
   .post(guidesController.create);
 
 // Matches with "/api/guides/:id"
-// router
-//   .route("/:id")
-//   .get(guidesController.findById)
+router
+  .route("/:id")
+  .get(guidesController.findById)
 //   .put(guidesController.update)
 //   .delete(guidesController.remove);
 

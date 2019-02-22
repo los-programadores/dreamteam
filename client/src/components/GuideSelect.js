@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import firebaseauth from "../firebase"
 import { Link } from "react-router-dom";
 import CarouselComponent from "./Carousel/CarouselComponent";
 import "../styles/GuideSelect.css"

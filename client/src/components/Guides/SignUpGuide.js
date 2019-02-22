@@ -1,24 +1,53 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import firebaseauth from "../firebase";
-import API from "../utils/API";
-import "../styles/Register.css";
+import firebaseauth from "../../firebase";
+import API from "../../utils/API";
+import "../../styles/Register.css";
+/* global google */
 
-class SignUpUser extends Component {
+class SignUpGuide extends Component {
+  state = {
+    location: "",
+  }
+
+  constructor(props) {
+    super(props);
+    this.autocompleteInput = React.createRef();
+    this.autocomplete = null;
+    this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
+  }
+  componentDidMount() {
+    this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
+      { "types": ["geocode"] });
+
+
+    this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
+  }
+
+
+  handlePlaceChanged() {
+    const place = this.autocomplete.getPlace();
+    this.setState({ location: place.vicinity });
+    console.log(this.state.location);
+  }
+
   handleSignUp = async event => {
     event.preventDefault();
-    const { email, password, name } = event.target.elements;
+    const { email, password, name, languages } = event.target.elements;
     try {
       const user = await firebaseauth
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
-      this.props.history.push("/home");
       const userData = {
         uid: user.user.uid,
-        name: name.value
+        name: name.value,
+        email: email.value,
+        location: this.state.location,
+        languages: languages.value
       }
-      API.saveUser(userData);
+      API.saveGuide(userData);
+      this.props.history.push("/home-guide");
     } catch (error) {
       alert(error);
     }
@@ -31,10 +60,13 @@ class SignUpUser extends Component {
           <div className="col s8 offset-s2">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Register</b> below
+                <b>Guide Register</b> below
                     </h4>
               <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+                Already have an account? <Link to="/login-guide">Log in</Link>
+              </p>
+              <p className="grey-text text-darken-1">
+                Need a guide? <Link to="/signup">Sign Up Here!</Link>
               </p>
             </div>
             <form onSubmit={this.handleSignUp}>
@@ -66,6 +98,20 @@ class SignUpUser extends Component {
                   placeholder="Confirm Password"
                 />
               </div>
+              <div className="input-field col s6">
+                <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Your Location"
+                  type="text" name="location"></input>
+              </div>
+              <div className="input-field col s6">
+                <label>
+                  Languages Spoken:
+                  <input
+                    name="languages"
+                    type="text"
+                    placeholder="separate languages with a comma"
+                  />
+                </label>
+              </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}></div>
               <button
                 style={{
@@ -78,9 +124,8 @@ class SignUpUser extends Component {
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >Sign up
                 </button>
-
             </form>
-            <button><Link to="/signup-guide">Sign up as a guide</Link></button>
+
           </div>
         </div>
       </div>
@@ -88,4 +133,4 @@ class SignUpUser extends Component {
   }
 }
 
-export default withRouter(SignUpUser);
+export default withRouter(SignUpGuide);
