@@ -7,11 +7,11 @@ class Navbar extends Component {
 
     handleLogOut = () => {
         firebaseauth.auth().signOut().then(function () {
-          // Sign-out successful.
+            // Sign-out successful.
         }).catch(function (error) {
-          throw error
+            throw error
         });
-      }
+    }
 
     constructor() {
         super();
@@ -45,7 +45,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <header className="cd-header">
                     <div className="header-wrapper">
                         <div className="logo-wrap">
@@ -73,7 +73,7 @@ class Navbar extends Component {
                                         <button className="nav-item"><Link to="/home">Home</Link></button>
                                         <button className="nav-item"><Link to="/voyages">Voyages</Link></button>
                                         <button className="nav-item"><Link to="/gchat">Chat</Link></button>
-                                        <button className="nav-item" onClick={this.handleLogOut}>Log Out</button>
+                                        <button className="nav-item" onClick={this.handleLogOut}><Link to="/">Log Out</Link></button>
                                     </div>
                                 )
                                 : (
