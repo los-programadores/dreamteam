@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import CarouselComponent from "./Carousel/CarouselComponent";
-import "../styles/GuideSelect.css"
 
+import guide from "./guideInfo/guideInfo";
+
+import CardComponent from "./Card/Card";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import "../styles/GuideSelect.css";
+const guideComponent = guide.map(guideobject  => <CardComponent {...guideobject}/> )
 
 class Guide extends Component {
 
@@ -10,15 +16,25 @@ class Guide extends Component {
     createVoyage = () => {
 
     }
+
+
     render() {
         return (
-            <div className="guide">
-                <h1>Select your Guide</h1>
-                <CarouselComponent />
-                <button><Link to="/gchat">Select Guide</Link></button>
-
-
-            </div>
+            <Row>
+                <Col>
+                    <Col>
+                        <h1 className="text-center">Select your Guide</h1>
+                        <hr></hr>
+                    </Col>
+                    <Col>
+                        <Row className="guide">
+                            <Col>
+                                {guideComponent}
+                            </Col>
+                        </Row>
+                    </Col>
+                </Col>
+            </Row>
         )
     }
 }

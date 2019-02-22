@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import API from "../../utils/API";
+import Navbar from "./Navbar";
 //css style sheet
 import "../../styles/Home.css"
 
@@ -33,39 +34,63 @@ class Home extends Component {
     return (
       <Container className="container">
         <button onClick={this.handleLogOut}>Log Out</button>
-        <Row className="UserProfile">
-          <Images></Images>
+        <Row>
           <Col>
+            <Navbar />
+          </Col>
+        </Row>
+        {console.log(this.state)}
+        <Row className="UserProfile">
+
+          <Images></Images>
+
+          <Col>
+
             <Row>
               <Col>
-                empty
-            </Col>
+                <hr></hr>
+              </Col>
             </Row>
+
             <Row>
               <Col>
                 <h1>Hello </h1>
               </Col>
             </Row>
+
             <Row>
               <Col>
                 <h3> {this.state.userName} </h3>
               </Col>
             </Row>
+
             <Row>
               <Col>
-                empty
-            </Col>
+                <hr></hr>
+              </Col>
             </Row>
+
           </Col>
+
           <Col>
+            <Row>
+              <Col>
+                <hr></hr>
+              </Col>
+            </Row>
             <Row className="createVoyages">
               <Col>
                 <Voyages />
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <hr></hr>
+              </Col>
+            </Row>
+
           </Col>
         </Row>
-
 
 
         <Row className="yourVoyages">

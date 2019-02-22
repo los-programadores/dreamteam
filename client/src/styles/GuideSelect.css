@@ -1,4 +1,15 @@
 .guide{
-    background-color: black;
+    display: -ms-inline-grid;
+    flex-wrap: initial;
+}
+
+.card{
+    background: white;
+    color: black;
+    mix-blend-mode: multiply;
+    margin: auto;
+    padding: 10px;
+}
+a{
     color: white;
 }
