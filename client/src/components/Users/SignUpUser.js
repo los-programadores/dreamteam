@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import firebaseauth from "../firebase";
-import API from "../utils/API";
-import "../styles/Register.css";
+import firebaseauth from "../../firebase";
+import API from "../../utils/API";
+import "../../styles/Register.css";
 
 class SignUpUser extends Component {
   handleSignUp = async event => {
@@ -16,7 +16,9 @@ class SignUpUser extends Component {
       this.props.history.push("/home");
       const userData = {
         uid: user.user.uid,
-        name: name.value
+        name: name.value,
+        email: email.value,
+
       }
       API.saveUser(userData);
     } catch (error) {
@@ -87,7 +89,6 @@ class SignUpUser extends Component {
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >Sign up
                 </button>
-
               </form>
             </div>
           </div>

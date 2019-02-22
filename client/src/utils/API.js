@@ -11,9 +11,13 @@ export default {
     return axios.post("/api/users", userData);
   },
 
+  saveVoyage: function (id, voyageData) {
+    return axios.post(`/api/users/${id}`, voyageData)
+  },
+
   // Gets all guides
-  getGuides: function () {
-    return axios.get("/api/guides");
+  getGuide: function (id) {
+    return axios.get(`/api/guides/${id}`);
   },
 
   // Saves a guide to the database

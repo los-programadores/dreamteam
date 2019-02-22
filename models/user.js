@@ -10,7 +10,11 @@ const userSchema = new Schema({
 
   name: {
     type: String,
-    required: true,
+    required: true
+  },
+  voyages: {
+    type: Array,
+    required: true
   }
 });
 

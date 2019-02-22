@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import firebaseauth from "../firebase"
-import { Link } from "react-router-dom";
 
 
 class Chat extends Component {
@@ -12,7 +10,7 @@ class Chat extends Component {
     render() {
         return (
             <div>
-                <h1>Chat with Guide</h1>
+                <h1 className="text-center" >Chat with Guide</h1>
             </div>
         )
     }

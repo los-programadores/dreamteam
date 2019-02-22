@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import firebaseauth from "../firebase";
+import firebaseauth from "../../firebase";
 
 
 class Login extends Component {
@@ -9,7 +9,7 @@ class Login extends Component {
     event.preventDefault();
     const { email, password } = event.target.elements;
     try {
-      const user = await firebaseauth
+      await firebaseauth
         .auth()
         .signInWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/home");
