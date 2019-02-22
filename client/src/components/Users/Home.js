@@ -15,14 +15,13 @@ class Home extends Component {
   state = { uid: null, userName: null };
 
   componentDidMount() {
-    firebaseauth.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.setState({
-          uid: user.uid
-        })
-        API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
-      }
+    const user = firebaseauth.auth().currentUser;
+
+    // request data about the user from the server
+    this.setState({
+      uid: user.uid
     });
+    API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
   }
 
   createVoyage = () => {
