@@ -1,11 +1,16 @@
-.container {
-    padding: 100px 100px 50px 50px;
+body {
+    background-image: url('https://slack-imgs.com/?c=1&url=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F398490%2Fscreenshots%2F2189858%2Fairplane-for-dribbble.gif');
+    background-position: top;
+    background-color: white;
+    background-size: 105%;
+}
+
+.container-mark {
+    padding: 100px 100px 275px 100px;
     margin: auto;
     position: relative;
-
 }
 
 .input-field input{
     margin: auto;
-
 }
