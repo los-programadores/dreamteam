@@ -7,6 +7,22 @@ const guideSchema = new Schema({
     required: true,
     unique: true
   },
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  languages: {
+    type: String,
+    required: true,
+  },
 });
 
 const Guide = mongoose.model("Guide", guideSchema);
