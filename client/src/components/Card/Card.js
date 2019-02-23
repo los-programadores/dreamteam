@@ -22,8 +22,7 @@ function CardComponent(props) {
                         <br></br>
                         Expertise: {props.expertise}
                     </Card.Text>
-                    <Button variant="primary" ></Button>
-                    {/* <Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button> */}
+                    <Button variant="primary" ><Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button>
                 </Card.Body>
             </Card>
         </Col>
