@@ -23,10 +23,6 @@ const guideSchema = new Schema({
     type: String,
     required: true,
   },
-  expertise: {
-    type: String,
-    required: true
-  }
 });
 
 const Guide = mongoose.model("Guide", guideSchema);
