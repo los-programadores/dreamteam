@@ -21,13 +21,14 @@ class App extends Component {
   state = { loading: true, authenticated: false, user: null };
 
   componentDidMount() {
-    const user = firebaseauth.auth().currentUser;
+    console.log(this.state)
+    // const user = firebaseauth.auth().currentUser;
 
-    if (user) {
-      // send to home page
-    } else {
-      // send to landing page
-    }
+    // if (user) {
+    //   // send to home page
+    // } else {
+    //   // send to landing page
+    // }
 
 
     firebaseauth.auth().onAuthStateChanged(user => {
