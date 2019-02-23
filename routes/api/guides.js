@@ -8,8 +8,8 @@ router.route("/")
 
 // Matches with "/api/guides/:id"
 router
-  .route("/:id")
-  .get(guidesController.findById)
+  .route("/:location")
+  .get(guidesController.findAll)
 //   .put(guidesController.update)
 //   .delete(guidesController.remove);
 

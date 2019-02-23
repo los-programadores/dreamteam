@@ -8,14 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import "../styles/GuideSelect.css";
-const guideComponent = guide.map(guideobject  => <CardComponent {...guideobject}/> )
+const guideComponent = guide.map(guideobject => <CardComponent {...guideobject} />)
 
 class Guide extends Component {
 
 
-    createVoyage = () => {
-
-    }
 
 
     render() {

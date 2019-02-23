@@ -4,8 +4,8 @@ const db = require("../models");
 module.exports = {
   findAll: function (req, res) {
     db.Guide
-      .find(req.query)
-      .sort({ date: -1 })
+      .find({ location: req.params.location })
+      // .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

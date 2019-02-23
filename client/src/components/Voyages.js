@@ -7,7 +7,8 @@ import API from "../utils/API";
 export default class Voyages extends Component {
     state = {
         uid: '',
-        chosenLocation: ''
+        chosenLocation: '',
+        guides: []
     }
     constructor(props) {
         super(props);
@@ -24,11 +25,19 @@ export default class Voyages extends Component {
 
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
+    loadGuides = () => {
+        API.getGuide(this.state.chosenLocation)
+            .then(res => this.setState({ guides: res.data }))
+            .catch(err => console.log(err));
+    };
+
 
 
     handlePlaceChanged() {
         const place = this.autocomplete.getPlace();
-        this.setState({ chosenLocation: place.vicinity });
+        this.setState({ chosenLocation: place.vicinity }, function () {
+            this.loadGuides();
+        });
         console.log(this.state.chosenLocation)
     }
 
@@ -85,6 +94,17 @@ export default class Voyages extends Component {
                                 placeholder="This will help your guide get a better idea of what to recommend to you to make your voyage as enjoyable as possible."
                             />
                         </label>
+                    </div>
+                    <div>
+                        {this.state.guides.map(guide => (
+                            <li key={guide.name}>
+                                {/* <a href={"/books/" + book._id}> */}
+                                <strong>
+                                    {guide.name} by {guide.location}
+                                </strong>
+                                {/* </a> */}
+                            </li>
+                        ))}
                     </div>
                     <button type="submit">Submit Voyage</button>
                 </form>
