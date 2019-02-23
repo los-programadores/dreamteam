@@ -12,21 +12,21 @@ import Navbar from "../Navbar";
 import "../../styles/Home.css"
 
 class Home extends Component {
-  state = { uid: null, userName: null };
+  state = {
+    uid: "",
+    userName: ""
+  };
 
   componentDidMount() {
-    const user = firebaseauth.auth().currentUser;
+    const user = firebaseauth.auth().currentUser.uid;
+    console.log(user)
 
-    // request data about the user from the server
-    this.setState({
-      uid: user.uid
+    this.setState({ uid: user }, function () {
+      API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
     });
-    API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
-  }
-
-  createVoyage = () => {
 
   }
+
   render() {
     return (
       <Container className="container">
@@ -35,7 +35,7 @@ class Home extends Component {
             <Navbar />
           </Col>
         </Row>
-        {console.log(this.state)}
+        {/* {console.log(this.state)} */}
         <Row className="UserProfile">
 
           <Images></Images>
