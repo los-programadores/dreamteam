@@ -16,11 +16,9 @@ export default class Voyages extends Component {
         this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
     }
     componentDidMount() {
-        firebaseauth.auth().onAuthStateChanged(user => {
-            this.setState({
-                uid: user.uid
-            })
-        });
+        const user = firebaseauth.auth().currentUser.uid;
+        this.setState({ uid: user });
+
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
             { "types": ["geocode"] });
 
