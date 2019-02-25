@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import firebaseauth from "../firebase";
 import API from "../utils/API";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 /* global google */
 
 export default class Voyages extends Component {
@@ -29,6 +31,7 @@ export default class Voyages extends Component {
         API.getGuide(this.state.chosenLocation)
             .then(res => this.setState({ guides: res.data }))
             .catch(err => console.log(err));
+
     };
 
 
@@ -53,8 +56,34 @@ export default class Voyages extends Component {
         // console.log(this.state.uid, voyageData);
         API.saveVoyage(this.state.uid, voyageData);
     };
-
-
+    cardRender(props) {
+        const guideElement = (
+            <Card style={{ width: '18rem' }}>
+                {/* <Card.Img variant="top" src={props.img} /> */}
+                <Card.Body>
+                    <Card.Title>{props.guide.name}</Card.Title>
+                    <Card.Text>
+                        Location: {props.guide.location}
+                        <br></br>
+                        Expertise: {props.guide.expertise}
+                    </Card.Text>
+                    <Button variant="primary"><Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button>
+                </Card.Body>
+            </Card>
+        );
+        ReactDOM.render(guideElement, document.getElementById('root'));
+    }
+    //     {
+    //     this.state.guides.map(guide => (
+    //         <li key={guide.name}>
+    //             {/* <a href={"/books/" + book._id}> */}
+    //             <strong>
+    //                 {guide.name} by {guide.location}
+    //             </strong>
+    //             {/* </a> */}
+    //         </li>
+    //     ))
+    // }
     render() {
         return (
             <div>
@@ -95,16 +124,8 @@ export default class Voyages extends Component {
                             />
                         </label>
                     </div>
-                    <div>
-                        {this.state.guides.map(guide => (
-                            <li key={guide.name}>
-                                {/* <a href={"/books/" + book._id}> */}
-                                <strong>
-                                    {guide.name} by {guide.location}
-                                </strong>
-                                {/* </a> */}
-                            </li>
-                        ))}
+                    <div id="root">
+
                     </div>
                     <button type="submit">Submit Voyage</button>
                 </form>
