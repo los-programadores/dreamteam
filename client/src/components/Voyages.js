@@ -40,6 +40,7 @@ export default class Voyages extends Component {
         const place = this.autocomplete.getPlace();
         this.setState({ chosenLocation: place.vicinity }, function () {
             this.loadGuides();
+            this.cardRender();
         });
         console.log(this.state.chosenLocation)
     }
