@@ -14,3 +14,17 @@ body {
 .input-field input{
     margin: auto;
 }
+
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+.grey-text a{
+    color:black;
+}
+
+.grey-text a:hover{
+    color:blue;
+}
+
