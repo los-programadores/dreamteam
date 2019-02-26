@@ -1,5 +1,6 @@
 .guide{
-    display: flex
+    display: -ms-inline-grid;
+    flex-wrap: initial;
 }
 
 .card{
