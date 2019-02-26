@@ -4,7 +4,10 @@ import firebaseauth from "../firebase";
 import API from "../utils/API";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import CardComponent from './Card/Card'
 /* global google */
+
+let guideComponent;
 
 export default class Voyages extends Component {
     state = {
@@ -40,8 +43,8 @@ export default class Voyages extends Component {
         const place = this.autocomplete.getPlace();
         this.setState({ chosenLocation: place.vicinity }, function () {
             this.loadGuides();
-            this.cardRender();
         });
+        this.state.guides.map(guideobject => <CardComponent {...guideobject} />)
         console.log(this.state.chosenLocation)
     }
 
@@ -57,38 +60,10 @@ export default class Voyages extends Component {
         // console.log(this.state.uid, voyageData);
         API.saveVoyage(this.state.uid, voyageData);
     };
-    cardRender(props) {
-        const guideElement = (
-            <Card style={{ width: '18rem' }}>
-                {/* <Card.Img variant="top" src={props.img} /> */}
-                <Card.Body>
-                    <Card.Title>{props.guide.name}</Card.Title>
-                    <Card.Text>
-                        Location: {props.guide.location}
-                        <br></br>
-                        Expertise: {props.guide.expertise}
-                    </Card.Text>
-                    <Button variant="primary"><Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button>
-                </Card.Body>
-            </Card>
-        );
-        ReactDOM.render(guideElement, document.getElementById('root'));
-    }
-    //     {
-    //     this.state.guides.map(guide => (
-    //         <li key={guide.name}>
-    //             {/* <a href={"/books/" + book._id}> */}
-    //             <strong>
-    //                 {guide.name} by {guide.location}
-    //             </strong>
-    //             {/* </a> */}
-    //         </li>
-    //     ))
-    // }
+
     render() {
         return (
             <div>
-
                 <h1 className="text-center">Welcom to the Voyages Page</h1>
                 <h2 className="text-center" >build your Voyage Below:</h2>
                 <div>
@@ -126,7 +101,7 @@ export default class Voyages extends Component {
                         </label>
                     </div>
                     <div id="root">
-
+                        {guideComponent}
                     </div>
                     <button type="submit">Submit Voyage</button>
                 </form>
