@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import firebaseauth from "../../firebase";
 import API from "../../utils/API";
-import "../../styles/Register.css";
+import "../../styles/UserRegister.css";
 
 class SignUpUser extends Component {
   handleSignUp = async event => {
@@ -43,7 +43,10 @@ class SignUpUser extends Component {
                   <b>Register</b> below
                     </h4>
                 <p className="grey-text text-darken-1">
-                  Already have an account? <Link to="/login">Log in</Link>
+                  Already have an account? <Link to="/login"><b>Log in</b></Link>
+                </p>
+                <p className="grey-text text-darken-1">
+                  Trying to sign up as a Guide? <Link to="/signup-guide"><b>Register</b></Link>
                 </p>
               </div>
               <form onSubmit={this.handleSignUp}>
