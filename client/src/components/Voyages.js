@@ -6,7 +6,8 @@ import CardComponent from './Card/Card';
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import "../styles/Voyages.css"
 /* global google */
 
 let guideComponent;
@@ -68,12 +69,12 @@ export default class Voyages extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1 className="text-center">Welcome to the Voyages Page</h1>
+                        <h1 className="header text-center">Welcome to the Voyages Page</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h2 className="text-center" >build your Voyage Below:</h2>
+                        <h2 className=" header text-center" >build your Voyage Below:</h2>
                     </Col>
                 </Row>
                 <Row>

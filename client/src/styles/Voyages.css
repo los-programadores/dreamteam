@@ -1,0 +1,18 @@
+#root{
+    display: flex;
+}
+
+::placeholder{
+    opacity: .5;
+}
+label{
+    color: black;
+    font-size: 18px;
+}
+h1, h2 {
+    text-align: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
