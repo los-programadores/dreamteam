@@ -16,6 +16,8 @@ function CardComponent(props) {
                     Location: {props.location}
                     <br></br>
                     Expertise: {props.expertise}
+                    <br></br>
+                    Languages: {props.languages}
                 </Card.Text>
                 <Button variant="primary"><Link to="/gchat">Hire me for ${props.hourlyRate}/hr.</Link></Button>
             </Card.Body>
