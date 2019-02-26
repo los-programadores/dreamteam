@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import firebaseauth from "../firebase";
 import API from "../utils/API";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import CardComponent from './Card/Card'
 /* global google */
+
+let guideComponent;
 
 export default class Voyages extends Component {
     state = {
@@ -29,6 +34,7 @@ export default class Voyages extends Component {
         API.getGuide(this.state.chosenLocation)
             .then(res => this.setState({ guides: res.data }))
             .catch(err => console.log(err));
+
     };
 
 
@@ -38,6 +44,7 @@ export default class Voyages extends Component {
         this.setState({ chosenLocation: place.vicinity }, function () {
             this.loadGuides();
         });
+        this.state.guides.map(guideobject => <CardComponent {...guideobject} />)
         console.log(this.state.chosenLocation)
     }
 
@@ -54,11 +61,9 @@ export default class Voyages extends Component {
         API.saveVoyage(this.state.uid, voyageData);
     };
 
-
     render() {
         return (
             <div>
-
                 <h1 className="text-center">Welcom to the Voyages Page</h1>
                 <h2 className="text-center" >build your Voyage Below:</h2>
                 <div>
@@ -95,16 +100,8 @@ export default class Voyages extends Component {
                             />
                         </label>
                     </div>
-                    <div>
-                        {this.state.guides.map(guide => (
-                            <li key={guide.name}>
-                                {/* <a href={"/books/" + book._id}> */}
-                                <strong>
-                                    {guide.name} by {guide.location}
-                                </strong>
-                                {/* </a> */}
-                            </li>
-                        ))}
+                    <div id="root">
+                        {guideComponent}
                     </div>
                     <button type="submit">Submit Voyage</button>
                 </form>
