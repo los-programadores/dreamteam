@@ -34,7 +34,7 @@ class SignUpGuide extends Component {
 
   handleSignUp = async event => {
     event.preventDefault();
-    const { email, password, name, languages } = event.target.elements;
+    const { email, password, name, languages, expertise, hourlyRate } = event.target.elements;
     try {
       const user = await firebaseauth
         .auth()
@@ -44,7 +44,9 @@ class SignUpGuide extends Component {
         name: name.value,
         email: email.value,
         location: this.state.location,
-        languages: languages.value
+        languages: languages.value,
+        expertise: expertise.value,
+        hourlyRate: hourlyRate.value
       }
       API.saveGuide(userData);
       this.props.history.push("/home-guide");
@@ -109,6 +111,26 @@ class SignUpGuide extends Component {
                     name="languages"
                     type="text"
                     placeholder="separate languages with a comma"
+                  />
+                </label>
+              </div>
+              <div className="input-field col s6">
+                <label>
+                  Expertise:
+                  <input
+                    name="Expertise"
+                    type="text"
+                    placeholder="separate expertise with a comma"
+                  />
+                </label>
+              </div>
+              <div className="input-field col s6">
+                <label>
+                  Hourly Rate:
+                  <input
+                    name="hourlyRate"
+                    type="text"
+                    placeholder="Enter your rate."
                   />
                 </label>
               </div>
