@@ -44,7 +44,7 @@ export default class Voyages extends Component {
         this.setState({ chosenLocation: place.vicinity }, function () {
             this.loadGuides();
         });
-        this.state.guides.map(guideobject => <CardComponent {...guideobject} />)
+        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} />)
         console.log(this.state.chosenLocation)
     }
 
