@@ -6,7 +6,7 @@ router.route("/")
   .get(guidesController.findAll)
   .post(guidesController.create);
 
-// Matches with "/api/guides/:location"
+// Matches with "/api/guides/:id"
 router
   .route("/:location")
   .get(guidesController.findAll)

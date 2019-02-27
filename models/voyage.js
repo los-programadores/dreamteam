@@ -2,20 +2,28 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const voyageSchema = new Schema({
-  uid: {
+  vid: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
-  guideId: {
+  location: {
     type: String,
-    required: true
+    required: true,
+    unique: false
   },
-  information: {
+  startDatae: {
+    type: Date,
+    required: true,
+    unique: false
+  },
+  endDate: {
+    type: Date,
+    required: false,
+    unique: false
+  },
+  insterest: {
     type: Object,
-    required: true
-  },
-  chat: {
-    type: Array,
     required: true
   }
 });
