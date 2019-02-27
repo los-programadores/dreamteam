@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from 'react-bootstrap/Form'
+
 /* global google */
 
 let guideComponent;
@@ -15,7 +16,8 @@ export default class Voyages extends Component {
     state = {
         uid: '',
         chosenLocation: '',
-        guides: []
+        guides: [],
+        guideID: ''
     }
     constructor(props) {
         super(props);
@@ -39,14 +41,19 @@ export default class Voyages extends Component {
 
     };
 
-
+    guideChosen = (e) => {
+        console.log('we got there')
+        this.setState({ guideID: e.target.id }, function () {
+            console.log(this.state);
+        })
+    }
 
     handlePlaceChanged() {
         const place = this.autocomplete.getPlace();
         this.setState({ chosenLocation: place.vicinity }, function () {
             this.loadGuides();
         });
-        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} />)
+        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
         console.log(this.state.chosenLocation)
     }
 
@@ -121,9 +128,8 @@ export default class Voyages extends Component {
                         </Form>
                     </Col>
                     <Col md="auto">
-                        <div id="root">
-                            {guideComponent}
-                        </div>
+
+                        {guideComponent}
                     </Col>
 
                 </Row>
