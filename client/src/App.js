@@ -20,6 +20,7 @@ import Chat from "./components/GuideChat"
 class App extends Component {
   state = { loading: true, authenticated: false, user: null };
 
+
   componentDidMount() {
     console.log(this.state)
     // const user = firebaseauth.auth().currentUser;
