@@ -10,7 +10,7 @@ router.route("/")
 router
   .route("/:id")
   .get(usersController.findById)
-  .post(usersController.createVoyage)
+// .post(usersController.createVoyage)
 //   .delete(usersController.remove);
 
 module.exports = router;

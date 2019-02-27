@@ -1,4 +1,5 @@
 module.exports = {
   User: require("./user"),
-  Guide: require("./guide")
+  Guide: require("./guide"),
+  voyage: require("./voyage")
 };
