@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
 
 function CardComponent(props) {
+
 
     console.log("props", props)
     return (
@@ -23,7 +24,6 @@ function CardComponent(props) {
                 </Card.Body>
             </Card>
         </div>
-
 
     );
 

@@ -9,11 +9,16 @@ function Voyages(props) {
     return (
         <div className="yourVoyages">
             <Row>
-                <Col> {props.time} </Col>
-                <hr></hr>
+                <Col lg={4} className="voyages-time">
+                    {props.time}
+                </Col>
             </Row>
 
-            <Row className="voyages-data"> Your Voyages are going here </Row>
+            <Row>
+                <Col lg={4} className="voyages-data">
+                    Insert Voyages Here
+                </Col>
+            </Row>
         </div>
     );
 }
