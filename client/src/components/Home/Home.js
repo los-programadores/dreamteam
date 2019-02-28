@@ -30,13 +30,9 @@ class Home extends Component {
 
             voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
             console.log(this.state.voyages)
+            this.forceUpdate();
           }))
-        API.getVoyages(this.state.uid)
-          .then(res => this.setState({ voyages: res.data }, function () {
 
-            voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
-            console.log(this.state.voyages)
-          }))
       }));
     });
 

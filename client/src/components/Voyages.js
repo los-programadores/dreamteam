@@ -34,12 +34,10 @@ export default class Voyages extends Component {
 
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
-    loadGuides = () => {
-        API.getGuides(this.state.chosenLocation)
-            .then(res => this.setState({ guides: res.data }))
-            .catch(err => console.log(err));
+    // loadGuides = () => {
 
-    };
+
+    // };
 
     guideChosen = (e) => {
         console.log('we got there')
@@ -51,10 +49,16 @@ export default class Voyages extends Component {
     handlePlaceChanged() {
         const place = this.autocomplete.getPlace();
         this.setState({ chosenLocation: place.vicinity }, function () {
-            this.loadGuides();
+            API.getGuides(this.state.chosenLocation)
+                .then(res => this.setState({ guides: res.data }, function () {
+                    guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
+                    console.log(this.state.chosenLocation)
+                    this.forceUpdate();
+                }))
+                .catch(err => console.log(err));
+
         });
-        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
-        console.log(this.state.chosenLocation)
+
     }
 
     handleVoyageBuild = event => {
