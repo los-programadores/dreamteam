@@ -106,7 +106,7 @@ class SignUpGuide extends Component {
               </div>
               <div className="input-field col s6">
                 <input
-                  name="Expertise"
+                  name="expertise"
                   type="text"
                   placeholder="Enter your field(s) of expertise"
                 />
