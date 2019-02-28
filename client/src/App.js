@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Users/Home";
 import HomeGuide from "./components/Guides/HomeGuide";
-import Landing from "./components/landingPage";
-import Login from "./components/Users/LogIn";
+import Landing from "./components/Landing";
+import Login from "./components/LogIn";
 import LoginGuide from "./components/Guides/LoginGuide";
-import SignUpUser from "./components/Users/SignUpUser";
+import SignUpUser from "./components/Register";
 import SignUpGuide from "./components/Guides/SignUpGuide";
 import { PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"

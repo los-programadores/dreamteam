@@ -1,0 +1,21 @@
+.title h4{
+  justify-content: center;
+  text-align: center;
+  color: rgb(88, 88, 121);
+  margin-top: 8%;
+  font-size: 2.8em;
+  font-family: 'Concert One', cursive;
+  text-shadow: #474747 2px 3px 2px;
+
+}
+
+.title p{
+    font-size: 1.5em;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.row {
+    justify-content: center;
+    text-align: center;
+}
+

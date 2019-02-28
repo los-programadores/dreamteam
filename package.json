@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/los-programadores/dreamteam#readme",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "boostrap": "^2.0.0",

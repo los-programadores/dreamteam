@@ -1,0 +1,74 @@
+.container-home{
+  z-index: 1;
+  padding: 0px;
+ 
+}
+
+.UserProfile{
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-039.jpg");
+  background-size: 100%;
+  padding: 6%; 
+}
+
+.createVoyages{
+  padding: 20px;
+  background-image: url("https://i.pinimg.com/236x/db/68/d5/db68d5b97d69e194ba6200863eae8395.jpg?b=t");
+  background-size: 100%;
+  background-position: top;
+  padding: 3%;
+
+}
+
+.yourVoyages{
+  background-color: rgb(218, 211, 211);
+  padding: 10px;
+  text-align: center;
+}
+.insert-voyage {
+  background-color: orange;
+  padding: 20px;
+  margin: 30px;
+  position: relative;
+}
+.voyages-time {
+  font-family: 'Baloo', cursive;
+  font-size: 2.5em;
+}
+.voyages-data{
+  text-align: center;
+  padding: 40px;
+} 
+
+
+.UserName {
+  padding: 5%;
+  position: relative;
+}
+.UserName h3{
+  font-family: 'Baloo', cursive;
+  font-size: 5em;
+  position: relative;
+}
+
+.UserName h1{
+  font-size: 3em;
+  position: relative;
+  justify-content: center;
+}
+
+.voyage-text {
+  padding: 50px;
+  position: relative;
+  margin: auto;
+  font-size: 2em;
+  font-weight: 500;
+  color: rgb(215, 245, 250);
+  
+}
+.flow-text {
+  margin: auto;
+  padding: 20px;
+}
+.row {
+  margin: 0px;
+}
