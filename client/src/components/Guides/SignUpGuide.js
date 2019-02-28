@@ -33,7 +33,7 @@ class SignUpGuide extends Component {
 
   handleSignUp = async event => {
     event.preventDefault();
-    const { email, password, name, languages } = event.target.elements;
+    const { email, password, name, languages, expertise, hourlyRate } = event.target.elements;
     try {
       const user = await firebaseauth
         .auth()
@@ -43,7 +43,9 @@ class SignUpGuide extends Component {
         name: name.value,
         email: email.value,
         location: this.state.location,
-        languages: languages.value
+        languages: languages.value,
+        expertise: expertise.value,
+        hourlyRate: hourlyRate.value
       }
       API.saveGuide(userData);
       this.props.history.push("/home-guide");
@@ -62,10 +64,10 @@ class SignUpGuide extends Component {
                 <b>Guide Register</b> below
                     </h4>
               <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login-guide">Log in</Link>
+                Already have an account? <Link to="/login-guide"><b>Log in</b></Link>
               </p>
               <p className="grey-text text-darken-1">
-                Need a guide? <Link to="/signup">Sign Up Here!</Link>
+                Need a guide? <Link to="/signup"><b>Sign Up Here!</b></Link>
               </p>
             </div>
             <form onSubmit={this.handleSignUp}>
@@ -102,14 +104,25 @@ class SignUpGuide extends Component {
                   type="text" name="location"></input>
               </div>
               <div className="input-field col s6">
-                <label>
-                  Languages Spoken:
-                  <input
-                    name="languages"
-                    type="text"
-                    placeholder="separate languages with a comma"
-                  />
-                </label>
+                <input
+                  name="expertise"
+                  type="text"
+                  placeholder="Enter your field(s) of expertise"
+                />
+              </div>
+              <div className="input-field col s6">
+                <input
+                  name="hourlyRate"
+                  type="text"
+                  placeholder="Enter your hourly rate."
+                />
+              </div>
+              <div className="input-field col s6">
+                <input
+                  name="languages"
+                  type="text"
+                  placeholder="Enter your languages spoken"
+                />
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}></div>
               <button

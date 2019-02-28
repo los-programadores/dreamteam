@@ -2,12 +2,22 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import firebaseauth from "../firebase";
 import API from "../utils/API";
+import CardComponent from './Card/Card';
+import Container from 'react-bootstrap/Container';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from 'react-bootstrap/Form'
+
 /* global google */
+
+let guideComponent;
 
 export default class Voyages extends Component {
     state = {
         uid: '',
-        chosenLocation: ''
+        chosenLocation: '',
+        guides: [],
+        guideID: ''
     }
     constructor(props) {
         super(props);
@@ -16,21 +26,34 @@ export default class Voyages extends Component {
         this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
     }
     componentDidMount() {
-        firebaseauth.auth().onAuthStateChanged(user => {
-            this.setState({
-                uid: user.uid
-            })
-        });
+        const user = firebaseauth.auth().currentUser.uid;
+        this.setState({ uid: user });
+
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
             { "types": ["geocode"] });
 
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
+    loadGuides = () => {
+        API.getGuide(this.state.chosenLocation)
+            .then(res => this.setState({ guides: res.data }))
+            .catch(err => console.log(err));
 
+    };
+
+    guideChosen = (e) => {
+        console.log('we got there')
+        this.setState({ guideID: e.target.id }, function () {
+            console.log(this.state);
+        })
+    }
 
     handlePlaceChanged() {
         const place = this.autocomplete.getPlace();
-        this.setState({ chosenLocation: place.vicinity });
+        this.setState({ chosenLocation: place.vicinity }, function () {
+            this.loadGuides();
+        });
+        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
         console.log(this.state.chosenLocation)
     }
 
@@ -47,50 +70,70 @@ export default class Voyages extends Component {
         API.saveVoyage(this.state.uid, voyageData);
     };
 
-
     render() {
         return (
-            <div>
-
-                <h1 className="text-center">Welcom to the Voyages Page</h1>
-                <h2 className="text-center" >build your Voyage Below:</h2>
-                <div>
-                    <label>Location:
+            <Container>
+                <Row>
+                    <Col>
+                        <h1 className="text-center">Welcome to the Voyages Page</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <h2 className="text-center" >build your Voyage Below:</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <label>Location:
                     <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Location"
-                            type="text" />
-                    </label>
-                </div>
-                <form onSubmit={this.handleVoyageBuild}>
-                    <div>
-                        <label>List your interests
-                    <input
-                                name="interests"
-                                type="text"
-                                placeholder="separate interests with a comma"
-                            />
+                                type="text" />
                         </label>
-                    </div>
-                    <div>
-                        <label>List Support with any languages you'll need
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md="auto">
+
+
+                        <Form onSubmit={this.handleVoyageBuild}>
+                            <Form.Group>
+                                <Form.Label>List your interests
+                            <input
+                                        name="interests"
+                                        type="text"
+                                        placeholder="separate interests with a comma"
+                                    />
+                                </Form.Label>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>List Support with any languages you'll need
                     <input
-                                name="languages"
-                                type="text"
-                                placeholder="separate languages with a comma"
-                            />
-                        </label>
-                    </div>
-                    <div>
-                        <label>Describe your expectations for your voyage
+                                        name="languages"
+                                        type="text"
+                                        placeholder="separate languages with a comma"
+                                    />
+                                </Form.Label>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>Describe your expectations for your voyage
                         <br />
-                            <textarea cols="50"
-                                name="description"
-                                placeholder="This will help your guide get a better idea of what to recommend to you to make your voyage as enjoyable as possible."
-                            />
-                        </label>
-                    </div>
-                    <button type="submit">Submit Voyage</button>
-                </form>
-            </div>
+                                    <textarea cols="50"
+                                        name="description"
+                                        placeholder="This will help your guide get a better idea of what to recommend to you to make your voyage as enjoyable as possible."
+                                    />
+                                </Form.Label>
+                            </Form.Group>
+
+                            <button type="submit">Submit Voyage</button>
+                        </Form>
+                    </Col>
+                    <Col md="auto">
+
+                        {guideComponent}
+                    </Col>
+
+                </Row>
+            </Container>
 
         )
     }

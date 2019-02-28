@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import HomeGuide from "./components/Guides/HomeGuide";
 import Landing from "./components/Landing";
@@ -20,7 +20,18 @@ import Chat from "./components/GuideChat"
 class App extends Component {
   state = { loading: true, authenticated: false, user: null };
 
+
   componentDidMount() {
+    console.log(this.state)
+    // const user = firebaseauth.auth().currentUser;
+
+    // if (user) {
+    //   // send to home page
+    // } else {
+    //   // send to landing page
+    // }
+
+
     firebaseauth.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({
@@ -34,6 +45,7 @@ class App extends Component {
           currentUser: null,
           loading: false
         });
+
       }
     });
   }
@@ -44,6 +56,10 @@ class App extends Component {
     if (loading) {
       return <p>Loading...</p>;
     }
+
+    // if (!authenticated) {
+    //   return <Redirect to="/" />
+    // }
 
     return (
       <Router>

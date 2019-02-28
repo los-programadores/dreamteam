@@ -12,6 +12,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+
   voyages: {
     type: Array,
     required: true
