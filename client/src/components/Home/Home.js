@@ -10,20 +10,35 @@ import API from "../../utils/API";
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 
+let voyageComponent;
 class Home extends Component {
-  state = { uid: null, userName: null };
+  state = {
+    uid: "",
+    userName: "",
+    voyages: []
+  };
 
-  // componentDidMount() {
-  //   const user = firebaseauth.auth().currentUser;
+  componentDidMount() {
+    const user = firebaseauth.auth().currentUser.uid;
+    console.log(user)
 
-  //   // request data about the user from the server
-  //   this.setState({
-  //     uid: user.uid
-  //   });
-  //   API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
-  // }
+    this.setState({ uid: user }, function () {
+      API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }, function () {
 
-  createVoyage = () => {
+        API.getVoyages(this.state.uid)
+          .then(res => this.setState({ voyages: res.data }, function () {
+
+            voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
+            console.log(this.state.voyages)
+          }))
+        API.getVoyages(this.state.uid)
+          .then(res => this.setState({ voyages: res.data }, function () {
+
+            voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
+            console.log(this.state.voyages)
+          }))
+      }));
+    });
 
   }
   render() {
@@ -57,6 +72,9 @@ class Home extends Component {
               time="Current"
 
             />
+            <div>
+              {voyageComponent}
+            </div>
           </Col>
           <Col lg={4} className="insert-voyage">
             <YourVoyages
