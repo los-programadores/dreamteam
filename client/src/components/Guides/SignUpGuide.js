@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import firebaseauth from "../../firebase";
 import API from "../../utils/API";
-import "../../styles/Register.css";
 /* global google */
 
 class SignUpGuide extends Component {

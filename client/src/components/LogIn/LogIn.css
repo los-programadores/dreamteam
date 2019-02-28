@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+.app {
+    margin: 100px 50px 50px 50px;
+    height: 100%;
+}
+.row-button {
+    margin-bottom: 100%;
+    
+}
+.row-login {
+    margin: 0px 50px 50px 50px;
+    position: relative;
+    justify-content: center;
+}
+
+h4 {
+    font-size: 3em;
+    font-family: Montserrat;
+}
+
+p {
+    font-size: 1.6em;
+}
+
+p :hover{
+    color: rgba(228, 100, 40, 0.884);
+    opacity: 5;
+    
+
+}

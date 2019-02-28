@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Home from "./components/Users/Home";
+import Home from "./components/Home/Home";
 import HomeGuide from "./components/Guides/HomeGuide";
-import Landing from "./components/landingPage";
-import Login from "./components/Users/LogIn";
+import Landing from "./components/Landing";
+import Login from "./components/LogIn";
 import LoginGuide from "./components/Guides/LoginGuide";
-import SignUpUser from "./components/Users/SignUpUser";
+import SignUpUser from "./components/Register";
 import SignUpGuide from "./components/Guides/SignUpGuide";
 import { PrivateRouteHome, PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
