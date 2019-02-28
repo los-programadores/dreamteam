@@ -7,11 +7,11 @@ import Login from "./components/LogIn";
 import LoginGuide from "./components/Guides/LoginGuide";
 import SignUpUser from "./components/Register";
 import SignUpGuide from "./components/Guides/SignUpGuide";
-import { PrivateRouteHome, PrivateRouteLanding } from "./components/PrivateRoute"
-import firebaseauth from "./firebase"
-import Voyages from "./components/Voyages"
-import GuideSelect from "./components/GuideSelect"
-import Chat from "./components/GuideChat"
+import { PrivateRouteHome, PrivateRouteLanding } from "./components/PrivateRoute";
+import firebaseauth from "./firebase";
+import Voyages from "./components/VoyagesPage/Voyages";
+import GuideSelect from "./components/GuideSelect";
+import Chat from "./components/GuideChat";
 
 
 

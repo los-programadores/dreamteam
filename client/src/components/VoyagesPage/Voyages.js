@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import firebaseauth from "../firebase";
-import API from "../utils/API";
-import CardComponent from './Card/Card';
+import firebaseauth from "../../firebase";
+import API from "../../utils/API";
+import CardComponent from '../Card/Card';
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import "./voyagePage.css";
+import "./VoyagesPagebackground.css";
+import NavBar from "../Navbar/index"
 
 /* global google */
 
@@ -72,33 +75,34 @@ export default class Voyages extends Component {
 
     render() {
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <h1 className="text-center">Welcome to the Voyages Page</h1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <h2 className="text-center" >build your Voyage Below:</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <label>Location:
-                    <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Location"
-                                type="text" />
-                        </label>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md="auto">
+            <Container className="voyagePage" fluid="true">
+                <NavBar></NavBar>
+                <hr></hr>
 
+                <Row>
+                    <Col className="header">
+                        <h1 className="heading text-center">Create your Voyage</h1>
+                        {/* <h2 className="text-center" >build your Voyage Below:</h2> */}
+                    </Col>
+                </Row>
+                <br></br>
+
+                <Row>
+                    <Col className="text-center formDiv" md="auto">
+
+                        <Row>
+                            <Col>
+                                <label><b>Location:</b>
+                                    <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Location"
+                                        type="text" />
+                                </label>
+                            </Col>
+                        </Row>
 
                         <Form onSubmit={this.handleVoyageBuild}>
                             <Form.Group>
-                                <Form.Label>List your interests
-                            <input
+                                <Form.Label><b>List your interests:</b>
+                                    <input
                                         name="interests"
                                         type="text"
                                         placeholder="separate interests with a comma"
@@ -106,8 +110,8 @@ export default class Voyages extends Component {
                                 </Form.Label>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>List Support with any languages you'll need
-                    <input
+                                <Form.Label><b>List Support with any languages you'll need:</b>
+                                    <input
                                         name="languages"
                                         type="text"
                                         placeholder="separate languages with a comma"
@@ -115,8 +119,8 @@ export default class Voyages extends Component {
                                 </Form.Label>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Describe your expectations for your voyage
-                        <br />
+                                <Form.Label><b>Describe your expectations for your voyage:</b>
+                                    <br />
                                     <textarea cols="50"
                                         name="description"
                                         placeholder="This will help your guide get a better idea of what to recommend to you to make your voyage as enjoyable as possible."
@@ -124,11 +128,11 @@ export default class Voyages extends Component {
                                 </Form.Label>
                             </Form.Group>
 
-                            <button type="submit">Submit Voyage</button>
+                            <button className="btn btn-large waves-effect hoverable accent-1" id="submitbtn" type="submit">Submit Voyage</button>
+
                         </Form>
                     </Col>
                     <Col md="auto">
-
                         {guideComponent}
                     </Col>
 
