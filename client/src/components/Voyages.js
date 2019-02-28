@@ -35,7 +35,7 @@ export default class Voyages extends Component {
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
     loadGuides = () => {
-        API.getGuide(this.state.chosenLocation)
+        API.getGuides(this.state.chosenLocation)
             .then(res => this.setState({ guides: res.data }))
             .catch(err => console.log(err));
 
@@ -59,9 +59,10 @@ export default class Voyages extends Component {
 
     handleVoyageBuild = event => {
         event.preventDefault();
-        const { interests, description, languages, location } = event.target.elements;
+        const { interests, description, languages } = event.target.elements;
         const voyageData = {
-            location: location.value,
+            location: this.state.chosenLocation,
+            userID: this.state.uid,
             imformation: {
                 description: description.value,
                 interests: interests.value,
@@ -70,7 +71,7 @@ export default class Voyages extends Component {
             guideID: this.state.guideID
         }
         // console.log(this.state.uid, voyageData);
-        API.saveVoyage(this.state.uid, voyageData);
+        API.saveVoyage(voyageData);
     };
 
     render() {

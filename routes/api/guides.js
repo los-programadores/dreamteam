@@ -13,4 +13,7 @@ router
 //   .put(guidesController.update)
 //   .delete(guidesController.remove);
 
+router
+  .route("/:id")
+  .get(guidesController.findById)
 module.exports = router;

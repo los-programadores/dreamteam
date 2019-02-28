@@ -5,24 +5,22 @@ const voyageSchema = new Schema({
   userID: {
     type: String,
     required: true,
-    unique: true
   },
   location: {
     type: String,
     required: true,
-    unique: false
   },
   guideID: {
-    type: Date,
+    type: String,
     required: true,
   },
-  imformation: {
+  information: {
     type: Object,
-    required: true
+    require: true,
   },
   chat: {
     type: Object,
-    required: true
+    required: false
   }
 
 
