@@ -10,11 +10,12 @@ import API from "../../utils/API";
 import Navbar from "../Navbar";
 //css style sheet
 import "../../styles/Home.css"
-
+let voyageComponent;
 class Home extends Component {
   state = {
     uid: "",
-    userName: ""
+    userName: "",
+    voyages: []
   };
 
   componentDidMount() {
@@ -22,7 +23,15 @@ class Home extends Component {
     console.log(user)
 
     this.setState({ uid: user }, function () {
-      API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }));
+      API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }, function () {
+
+        API.getVoyages(this.state.uid)
+          .then(res => this.setState({ voyages: res.data }, function () {
+
+            voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
+            console.log(this.state.voyages)
+          }))
+      }));
     });
 
   }
@@ -99,6 +108,9 @@ class Home extends Component {
             <YourVoyages
               time="Current"
             />
+            <div>
+              {voyageComponent}
+            </div>
           </Col>
           <Col>
             <YourVoyages

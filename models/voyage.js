@@ -20,8 +20,10 @@ const voyageSchema = new Schema({
   },
   chat: {
     type: Object,
-    required: true
+    required: false
   }
+
+
 });
 
 const Voyage = mongoose.model("Voyage", voyageSchema);
