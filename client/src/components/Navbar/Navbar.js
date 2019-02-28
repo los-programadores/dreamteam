@@ -9,11 +9,11 @@ class Navbar extends Component {
 
         this.state = {
             showMenu: false,
-            navigateLogIn: false
+            navigateLogIn: false,
         };
 
         this.showMenu = this.showMenu.bind(this);
-        // this.closeMenu = this.closeMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
     }
 
     handleLogOut = () => {
@@ -25,18 +25,20 @@ class Navbar extends Component {
     showMenu(event) {
         event.preventDefault();
 
-        this.setState({ showMenu: true });
+        this.setState({ showMenu: true }, () => {
+            document.addEventListener('click', this.closeMenu);
+        });
+
     }
 
-    // closeMenu(event) {
-    //     if (!this.dropdownMenu.contains(event.target)) {
+    closeMenu(event) {
+        if (!this.dropdownMenu.contains(event.target)) {
 
-    //         this.setState({ showMenu: false }, () => {
-    //             document.removeEventListener('click', this.closeMenu);
-    //         });
-
-    //     }
-    // }
+            this.setState({ showMenu: false }, () => {
+                document.removeEventListener('click', this.closeMenu);
+            });
+        }
+    }
 
     render() {
         if (this.state.navigateLogIn) {
@@ -48,7 +50,7 @@ class Navbar extends Component {
             <header className="cd-header">
                 <div className="header-wrapper">
                     <div className="logo-wrap">
-                        <a href="/" className="hover-target"><span>Hello World</span></a>
+                        <a href="/" className="hover-target"><span>Hello </span>World</a>
                     </div>
                     <div className="nav-but-wrap">
                         <div className="menu-icon hover-target" onClick={this.showMenu}>
@@ -57,8 +59,6 @@ class Navbar extends Component {
                             <span className="menu-icon__line menu-icon__line-right"></span>
                         </div>
                     </div>
-
-
 
                     {
                         this.state.showMenu
@@ -78,6 +78,7 @@ class Navbar extends Component {
                             : (
                                 null
                             )
+
                     }
                 </div>
             </header>
