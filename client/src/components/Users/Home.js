@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 import API from "../../utils/API";
 import Navbar from "../Navbar";
 //css style sheet
-import "../../styles/Home.css"
+import "../Home/Home.css"
 let voyageComponent;
 class Home extends Component {
   state = {
