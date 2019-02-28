@@ -9,7 +9,7 @@ import SignUpUser from "./components/Register";
 import SignUpGuide from "./components/Guides/SignUpGuide";
 import { PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
-import Voyages from "./components/Voyages"
+import Voyages from "./components/VoyagesPage/Voyages"
 import GuideSelect from "./components/GuideSelect"
 import Chat from "./components/GuideChat"
 

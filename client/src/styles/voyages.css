@@ -1,0 +1,14 @@
+.voyagePage{
+    background-image: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg");
+    background-repeat: no-repeat;
+    margin: 0, 0, 0, 0;
+    padding: 0;
+}
+
+.form{
+    /* background: rgba(2, 178, 247, .5) */
+    background: rgba(100, 100, 100, .7)
+}
+.padding{
+    padding: 22%;
+}
