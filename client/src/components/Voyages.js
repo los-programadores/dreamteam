@@ -63,7 +63,7 @@ export default class Voyages extends Component {
         const voyageData = {
             location: this.state.chosenLocation,
             userID: this.state.uid,
-            imformation: {
+            information: {
                 description: description.value,
                 interests: interests.value,
                 languages: languages.value
