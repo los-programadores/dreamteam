@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebaseauth from "../firebase";
 import { Link, withRouter } from "react-router-dom";
-import "../styles/Navbar.css";
+import "./Navbar/Navbar.css";
 
 class Navbar extends Component {
     constructor() {

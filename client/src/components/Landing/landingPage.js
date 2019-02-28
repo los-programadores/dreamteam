@@ -29,9 +29,6 @@ class Landing extends Component {
                         </span>
                     </Col>
                 </Row>
-
-                <br />
-
                 <Row className="row">
                     <Col lg={6} className="flow-text">
                         <Link

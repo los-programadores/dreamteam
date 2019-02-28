@@ -14,7 +14,6 @@ import NavBar from "../Navbar/index"
 /* global google */
 
 let guideComponent;
-
 export default class Voyages extends Component {
     state = {
         uid: '',
@@ -31,48 +30,46 @@ export default class Voyages extends Component {
     componentDidMount() {
         const user = firebaseauth.auth().currentUser.uid;
         this.setState({ uid: user });
-
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
             { "types": ["geocode"] });
-
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
-    loadGuides = () => {
-        API.getGuide(this.state.chosenLocation)
-            .then(res => this.setState({ guides: res.data }))
-            .catch(err => console.log(err));
-
-    };
-
+    // loadGuides = () => {
+    // };
     guideChosen = (e) => {
         console.log('we got there')
         this.setState({ guideID: e.target.id }, function () {
             console.log(this.state);
         })
     }
-
     handlePlaceChanged() {
         const place = this.autocomplete.getPlace();
         this.setState({ chosenLocation: place.vicinity }, function () {
-            this.loadGuides();
+            API.getGuides(this.state.chosenLocation)
+                .then(res => this.setState({ guides: res.data }, function () {
+                    guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
+                    console.log(this.state.chosenLocation)
+                    this.forceUpdate();
+                }))
+                .catch(err => console.log(err));
         });
-        guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
-        console.log(this.state.chosenLocation)
     }
-
     handleVoyageBuild = event => {
         event.preventDefault();
         const { interests, description, languages } = event.target.elements;
         const voyageData = {
             location: this.state.chosenLocation,
-            interests: interests.value,
-            description: description.value,
-            languages: languages.value
+            userID: this.state.uid,
+            information: {
+                description: description.value,
+                interests: interests.value,
+                languages: languages.value
+            },
+            guideID: this.state.guideID
         }
         // console.log(this.state.uid, voyageData);
-        API.saveVoyage(this.state.uid, voyageData);
-    };
-
+        API.saveVoyage(voyageData);
+    }
     render() {
         return (
             <Container className="voyagePage" fluid="true">
