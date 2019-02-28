@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Users/Home";
 import HomeGuide from "./components/Guides/HomeGuide";
 import Landing from "./components/landingPage";
@@ -7,7 +7,7 @@ import Login from "./components/Users/LogIn";
 import LoginGuide from "./components/Guides/LoginGuide";
 import SignUpUser from "./components/Users/SignUpUser";
 import SignUpGuide from "./components/Guides/SignUpGuide";
-import { PrivateRouteHome, PrivateRouteLanding } from "./components/PrivateRoute"
+import { PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
 import Voyages from "./components/Voyages"
 import GuideSelect from "./components/GuideSelect"
@@ -66,13 +66,13 @@ class App extends Component {
         <div>
           <PrivateRouteLanding exact path="/home" component={Home} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/home-guide" component={HomeGuide} authenticated={this.state.authenticated} />
-          <PrivateRouteHome exact path="/" component={Landing} authenticated={this.state.authenticated} />
-          <PrivateRouteHome exact path="/login" component={Login} authenticated={this.state.authenticated} />
-          <PrivateRouteHome exact path="/login-guide" component={LoginGuide} authenticated={this.state.authenticated} />
+          <Route exact path="/" component={Landing} authenticated={this.state.authenticated} />
+          <Route exact path="/login" component={Login} authenticated={this.state.authenticated} />
+          <Route exact path="/login-guide" component={LoginGuide} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/voyages" component={Voyages} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/guides" component={GuideSelect} authenticated={this.state.authenticated} />
-          <PrivateRouteHome exact path="/signup" component={SignUpUser} authenticated={this.state.authenticated} />
-          <PrivateRouteHome exact path="/signup-guide" component={SignUpGuide} authenticated={this.state.authenticated} />
+          <Route exact path="/signup" component={SignUpUser} authenticated={this.state.authenticated} />
+          <Route exact path="/signup-guide" component={SignUpGuide} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/gchat" component={Chat} authenticated={this.state.authenticated} />
         </div>
       </Router>
