@@ -19,6 +19,7 @@
 }
 
 .formDiv{
+    margin-left: 5%;
     height: 100%;
     padding: 50px;
     border-radius: 100px;
@@ -53,11 +54,10 @@ textarea{
     width: 25%;
     height: 8%;
     border-radius: 50px;
-
     letter-spacing: 1%;
     padding: 2%;
     font-size: 100%;
 }
 #info{
-    padding-left: 10%;
+    padding-left: 8%;
 }
