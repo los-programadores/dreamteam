@@ -3,14 +3,14 @@
   text-align: center;
   color: rgb(131, 131, 153);
   margin-top: 6%;
-  font-size: 260%;
+  font-size: 60px;
   font-family: 'Concert One', cursive;
   text-shadow: #8a8686 1px 2px 2px;
 
 }
 
 .title p{
-    font-size: 150%;
+    font-size: 35px;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 

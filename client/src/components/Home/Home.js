@@ -53,7 +53,7 @@ class Home extends Component {
           </Col>
         </Row>
         <Row className="createVoyages">
-          <Col lg={12}>
+          <Col>
             <Voyages />
           </Col>
         </Row>
