@@ -13,7 +13,7 @@ function CardComponent(props) {
             <Card style={{
                 width: '18rem',
                 borderRadius: "25px",
-                background: "rgba(255, 255, 255, 0.5)",
+                background: "rgba(255, 255, 255, 0.7)",
                 border: "2px black solid",
                 boxShadow: "3px 3px black"
             }}>
