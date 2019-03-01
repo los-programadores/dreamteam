@@ -34,12 +34,12 @@ class Landing extends Component {
                         <Link
                             to="/signup"
                             style={{
-                                width: "20%",
+                                width: "15%",
                                 height: "10%",
                                 borderRadius: "50px",
                                 letterSpacing: "1%",
                                 padding: "2%",
-                                fontSize: "20px",
+                                fontSize: "60%",
                             }}
                             className="btn btn-large waves-effect waves-light hoverable accent-3"
                         >Register
@@ -49,12 +49,12 @@ class Landing extends Component {
                         <Link
                             to="/LogIn"
                             style={{
-                               width: "20%",
+                               width: "15%",
                                 height: "10%",
                                 borderRadius: "50px",
                                 letterSpacing: "1%",
                                 padding: "2%",
-                                fontSize: "20px",
+                                fontSize: "60%",
                             }}
                             className="btn btn-large waves-effect waves-light hoverable accent-3 white black-text"
                         > Log In
