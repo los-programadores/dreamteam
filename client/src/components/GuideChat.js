@@ -2,13 +2,20 @@ import React, { Component } from "react";
 
 
 class Chat extends Component {
+    componentDidMount() {
+        const voyageIDFromURL = this.props.match.params.voyageID;
+        if (typeof voyageIDFromURL !== 'undefined') {
+            console.log(voyageIDFromURL);
+        };
+    };
 
-    state = {
-        voyageID: "",
-        chat: '',
-        imformation: "",
-        guideEmail: ""
-    }
+    componentDidUpdate(prevProps) {
+        if (this.props.userID !== prevProps.userID) {
+            const voyageID = this.props.match.params.voyageID;
+            console.log(voyageID);
+        };
+    };
+
 
     render() {
         return (
