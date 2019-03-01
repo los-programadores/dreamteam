@@ -31,5 +31,8 @@ export default {
   // Saves a guide to the database
   saveGuide: function (userData) {
     return axios.post("/api/guides", userData);
+  },
+  getVoyage: function (vid) {
+    return axios.get(`/api/voyages/${vid}`)
   }
 };

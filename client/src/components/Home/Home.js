@@ -5,9 +5,11 @@ import Voyages from "../Voyages/Voyages";
 import YourVoyages from "../YourVoyages/YourVoyages";
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
+import Chat from "../GuideChat"
 import Col from "react-bootstrap/Col";
 import API from "../../utils/API";
 import Navbar from "../Navbar/Navbar";
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import "./Home.css";
 
 let voyageComponent;
@@ -17,6 +19,16 @@ class Home extends Component {
     userName: "",
     voyages: []
   };
+  // renderChat= ()=> {
+
+  // }
+  // sendVoyage = (e) => {
+  //   let id = e.target.className;
+  //   renderChat(id){
+
+  //   }
+
+  // }
 
   componentDidMount() {
     const user = firebaseauth.auth().currentUser.uid;
@@ -28,7 +40,13 @@ class Home extends Component {
         API.getVoyages(this.state.uid)
           .then(res => this.setState({ voyages: res.data }, function () {
 
-            voyageComponent = this.state.voyages.map(voyageObject => <h1>{voyageObject.location}</h1>)
+            voyageComponent = this.state.voyages.map(voyageObject =>
+              (<div className={voyageObject._id} onClick={this.sendVoyage}>
+                <h1 className={voyageObject._id} >{voyageObject.location}</h1>
+                <p>{voyageObject.information.description}</p>
+              </div>
+              )
+            )
             console.log(this.state.voyages)
             this.forceUpdate();
           }))
@@ -59,9 +77,9 @@ class Home extends Component {
         </Row>
         <Row className="yourVoyages">
           <Col lg={12} className="insert-voyage">
-            <YourVoyages voyage= {voyageComponent} time="Current Voyage"/>
+            <YourVoyages voyage={voyageComponent} time="Current Voyage" />
           </Col>
-          </Row>
+        </Row>
       </Container>
     )
   }
