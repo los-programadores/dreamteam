@@ -85,12 +85,14 @@ a:hover {
 	color: beige;
 	display: inline-block;
     vertical-align: middle;
-    transform: translateZ(0);
-	shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);    
+    transform: translateZ(0);   
 	backface-visibility: shadow;
     -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.4s;
     transition-property: transform;
+}
+.nav-item a{
+color: black;
 }
 
 .nav-item:hover,

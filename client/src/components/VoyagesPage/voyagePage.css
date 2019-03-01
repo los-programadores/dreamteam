@@ -12,7 +12,8 @@
 
 .voyagePage{
     height: 100%;
-    background-image: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg");
+    /* background-image: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg"); */
+    background-image: url("http://www.4usky.com/data/out/99/164899029-vector-wallpapers.jpeg");
     background-size: cover;
     margin: 0, 0, 0, 0;
     padding: 0;
@@ -20,11 +21,12 @@
 
 .formDiv{
     margin-left: 5%;
+    margin-bottom: 10px;
     height: 100%;
     padding: 50px;
     border-radius: 100px;
     /* background: rgba(2, 178, 247, .5) */
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     border: 2px black solid;
     box-shadow: 3px 3px black
 }
@@ -44,7 +46,7 @@ input, textarea{
 
 ::placeholder{
     color: black;
-    opacity: .5;
+    opacity: .7;
 }
 textarea{
     height: 100px;
