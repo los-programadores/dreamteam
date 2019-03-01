@@ -28,11 +28,11 @@ class Login extends Component {
         return (
             <Container fluid className="container">
                 <Row className="row">
-                    <Col lg={12} className="top"></Col>
+                    <Col className="top"></Col>
                 </Row>
                 <div className="app">
                     <Row className="row-login">
-                        <Col lg={12} className="login">
+                        <Col className="login">
                             <h4>
                                 <b>Login</b> below
                             </h4>
@@ -46,7 +46,7 @@ class Login extends Component {
                     <form onSubmit={this.handleSignUp}>
 
                         <Row className="row">
-                            <Col lg={6} className="input-field">
+                            <Col  className="input-field">
                                 <input
                                     name="email"
                                     type="email"
@@ -56,7 +56,7 @@ class Login extends Component {
                         </Row>
 
                         <Row className="row">
-                            <Col lg={6} className="input-field">
+                            <Col  className="input-field">
                                 <input
                                     name="password"
                                     type="password"
@@ -66,15 +66,16 @@ class Login extends Component {
                         </Row>
                         <br />
                         <Row className="row-button">
-                            <Col lg={12} className="button">
+                            <Col className="button">
                                 <button
                                     style={{
-                                        width: "10em",
-                                        height: "4em",
+                                        width: "15%",
+                                        height: "8%",
                                         borderRadius: "50px",
-                                        letterSpacing: "1px",
-                                        padding: "1em",
-                                        fontSize: "1em",
+                                        letterSpacing: "1%",
+                                        padding: "2%",
+                                        paddingBottom: "4%",
+                                        fontSize: "100%",
                                     }}
                                     type="submit"
                                     className="btn btn-large waves-effect waves-light hoverable blue accent-3"

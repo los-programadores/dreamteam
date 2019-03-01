@@ -1,13 +1,12 @@
 .container-home{
   z-index: 1;
   padding: 0px;
- 
 }
 
 .UserProfile{
   background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-039.jpg");
-  background-size: 100%;
-  padding: 3%; 
+  background-size: 90%;
+  padding: 1%; 
 }
 
 .createVoyages{
@@ -32,42 +31,43 @@
 }
 .voyages-time {
   font-family: 'Baloo', cursive;
-  font-size: 2.5em;
+  font-size: 40px;
 }
 .voyages-data{
   text-align: center;
-  padding: 40px;
+  padding: 3%;
 } 
 
 
 .UserName {
-  padding: 5%;
+  padding: 3%;
   position: relative;
 }
 .UserName h3{
   font-family: 'Baloo', cursive;
-  font-size: 5em;
+  font-size: 65px;
   position: relative;
+  padding: 2%
 }
 
 .UserName h1{
-  font-size: 3em;
+  font-size: 40px;
   position: relative;
   justify-content: center;
 }
 
 .voyage-text {
-  padding: 50px;
+  padding: 1%;
   position: relative;
   margin: auto;
-  font-size: 2em;
+  font-size: 26px;
   font-weight: 500;
   color: rgb(215, 245, 250);
   
 }
 .flow-text {
   margin: auto;
-  padding: 20px;
+  padding: 1%;
 }
 .row {
   margin: 0px;

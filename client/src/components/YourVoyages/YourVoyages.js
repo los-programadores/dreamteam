@@ -16,7 +16,7 @@ function Voyages(props) {
 
             <Row>
                 <Col lg={4} className="voyages-data">
-                    Insert Voyages Here
+                    {props.voyage}
                 </Col>
             </Row>
         </div>

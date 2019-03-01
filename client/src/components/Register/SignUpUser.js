@@ -36,7 +36,7 @@ class SignUpUser extends Component {
 
       <Container className="container-mark">
         <Row className="row">
-          <Col lg={12} className="Register">
+          <Col className="Register">
             <h4>
               <b>Register</b> below
                     </h4>
@@ -47,14 +47,14 @@ class SignUpUser extends Component {
         </Row>
         <form onSubmit={this.handleSignUp}>
           <Row className="row">
-            <Col lg={6} className="input-field">
+            <Col className="input-field">
               <input
                 name="name"
                 type="text"
                 placeholder="Full Name"
               />
             </Col>
-            <Col lg={6} className="input-field">
+            <Col className="input-field">
               <input
                 name="email"
                 type="email"
@@ -63,14 +63,14 @@ class SignUpUser extends Component {
             </Col>
           </Row>
           <Row className="row">
-            <Col lg={6} className="input-field">
+            <Col className="input-field">
               <input
                 name="password"
                 type="password"
                 placeholder="Password"
               />
             </Col>
-            <Col lg={6} className="input-field">
+            <Col className="input-field">
               <input
                 name="password2"
                 type="password"
@@ -79,15 +79,15 @@ class SignUpUser extends Component {
             </Col>
           </Row>
           <Row className="row-button">
-            <Col lg={12} className="button"></Col>
+            <Col md={12} className="button"></Col>
             <button
               style={{
-                width: "10em",
-                height: "4em",
+                width: "15%",
+                height: "8%",
                 borderRadius: "50px",
-                letterSpacing: "1px",
-                padding: "1em",
-                fontSize: "1em",
+                letterSpacing: "1%",
+                padding: "2%",
+                fontSize: "100%",
               }}
               type="submit"
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
