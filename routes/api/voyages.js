@@ -5,10 +5,13 @@ const voyagesController = require("../../controllers/voyagesControllers");
 router.route("/")
     .post(voyagesController.create);
 
+
 // Matches with "/api/voyages/:id"
 router
     .route("/:id")
     .get(voyagesController.findAll)
 //   .delete(voyagesController.remove);
-
+router
+    .route("/:vid")
+    .get(voyagesController.findVoyage);
 module.exports = router;

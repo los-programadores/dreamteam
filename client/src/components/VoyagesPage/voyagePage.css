@@ -11,22 +11,27 @@
 }
 
 .voyagePage{
+    height: 100%;
     background-image: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg");
-    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0, 0, 0, 0;
     padding: 0;
 }
 
 .formDiv{
+    margin-left: 5%;
+    height: 100%;
     padding: 50px;
     border-radius: 100px;
     /* background: rgba(2, 178, 247, .5) */
-    background: rgba(255, 255, 255, 0.5)
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px black solid;
+    box-shadow: 3px 3px black
 }
 .padding{
     padding: 22%;
 }
-b{
+label b{
     letter-spacing: 1px;
     font-size: 24px;
     font-family: 'Baloo', cursive;
@@ -52,4 +57,7 @@ textarea{
     letter-spacing: 1%;
     padding: 2%;
     font-size: 100%;
+}
+#info{
+    padding-left: 8%;
 }

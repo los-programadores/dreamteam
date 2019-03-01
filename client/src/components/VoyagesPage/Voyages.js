@@ -69,6 +69,7 @@ export default class Voyages extends Component {
         }
         // console.log(this.state.uid, voyageData);
         API.saveVoyage(voyageData);
+        this.props.history.push("/home");
     }
     render() {
         return (
@@ -129,7 +130,8 @@ export default class Voyages extends Component {
 
                         </Form>
                     </Col>
-                    <Col md="auto">
+
+                    <Col id="info">
                         {guideComponent}
                     </Col>
 
