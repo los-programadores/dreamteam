@@ -22,12 +22,12 @@
     margin: auto;
 }
 .modal-title {
-    font-size: 1.6em;    
+    font-size: 170%;    
 
 }
 .content-section-heading h2{
     font-family: 'Concert One';
-    font-size: 3.5em;
+    font-size: 300%;
     color: #e0dfdc;
     background: #556677;
     letter-spacing: .1em;
@@ -38,6 +38,6 @@
 }
 .modal-text {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size: 1.7em;
+    font-size: 150%;
     padding: 0px 70px 0px 70px;
 }
