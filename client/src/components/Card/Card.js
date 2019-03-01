@@ -33,7 +33,7 @@ function CardComponent(props) {
                         borderRadius: "50px",
                         padding: "5px",
                         letterSpacing: " 1px",
-                    }} variant="primary" onClick={props.onClick} id={props.uid}>Hire me for ${props.hourlyRate}/hr.</button>
+                    }} variant="primary" onClick={props.onClick} className={props.name} id={props.uid}>Hire me for ${props.hourlyRate}/hr.</button>
                 </Card.Body>
             </Card>
         </div >

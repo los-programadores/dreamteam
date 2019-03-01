@@ -22,7 +22,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    console.log(this.state)
+    // console.log(this.state)
     // const user = firebaseauth.auth().currentUser;
 
     // if (user) {

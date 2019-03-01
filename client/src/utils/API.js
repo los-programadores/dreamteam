@@ -21,7 +21,7 @@ export default {
 
   // Gets all guides
   getGuides: function (location) {
-    return axios.get(`/api/guides/${location}`);
+    return axios.get(`/api/guides/getguides/${location}`);
   },
 
   getGuide: function (id) {
@@ -32,7 +32,11 @@ export default {
   saveGuide: function (userData) {
     return axios.post("/api/guides", userData);
   },
-  getVoyage: function (vid) {
-    return axios.get(`/api/voyages/${vid}`)
+  getVoyage: function (voyageID) {
+    return axios.get(`/api/voyages/chat/${voyageID}`)
+  },
+
+  postVoyageChat: function (voyageID, chatData) {
+    return axios.post(`/api/voyages/chat/${voyageID}`, chatData)
   }
 };
