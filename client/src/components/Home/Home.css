@@ -46,12 +46,12 @@
 }
 .UserName h3{
   font-family: 'Baloo', cursive;
-  font-size: 5em;
+  font-size: 450%;
   position: relative;
 }
 
 .UserName h1{
-  font-size: 3em;
+  font-size: 250%;
   position: relative;
   justify-content: center;
 }
@@ -60,7 +60,7 @@
   padding: 50px;
   position: relative;
   margin: auto;
-  font-size: 2em;
+  font-size: 200%;
   font-weight: 500;
   color: rgb(215, 245, 250);
   

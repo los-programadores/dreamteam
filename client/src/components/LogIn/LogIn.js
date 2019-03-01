@@ -69,12 +69,13 @@ class Login extends Component {
                             <Col lg={12} className="button">
                                 <button
                                     style={{
-                                        width: "10em",
-                                        height: "4em",
+                                        width: "15%",
+                                        height: "8%",
                                         borderRadius: "50px",
-                                        letterSpacing: "1px",
-                                        padding: "1em",
-                                        fontSize: "1em",
+                                        letterSpacing: "1%",
+                                        padding: "2%",
+                                        paddingBottom: "4%",
+                                        fontSize: "100%",
                                     }}
                                     type="submit"
                                     className="btn btn-large waves-effect waves-light hoverable blue accent-3"

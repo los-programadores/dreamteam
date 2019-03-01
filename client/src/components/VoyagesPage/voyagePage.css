@@ -7,7 +7,7 @@
 }
 .heading{
     padding-top: 5%;
-    font-size: 3em;
+    font-size: 200%;
 }
 
 .voyagePage{
@@ -46,10 +46,10 @@ textarea{
 }
 #submitbtn{
     background-color: #F76C6C;
-    width: 11em;
-    height: 3.5em;
+    width: 25%;
+    height: 8%;
     border-radius: 50px;
-    padding: 1em;
-    font-size: 0.8em;
-    letter-spacing: 1px;
+    letter-spacing: 1%;
+    padding: 2%;
+    font-size: 100%;
 }
