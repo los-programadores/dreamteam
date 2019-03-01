@@ -129,7 +129,8 @@ export default class Voyages extends Component {
 
                         </Form>
                     </Col>
-                    <Col md="auto">
+
+                    <Col id="info">
                         {guideComponent}
                     </Col>
 
