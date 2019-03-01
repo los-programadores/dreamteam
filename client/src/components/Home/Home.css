@@ -1,13 +1,12 @@
 .container-home{
   z-index: 1;
   padding: 0px;
- 
 }
 
 .UserProfile{
   background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-039.jpg");
-  background-size: 100%;
-  padding: 3%; 
+  background-size: 90%;
+  padding: 1%; 
 }
 
 .createVoyages{
@@ -41,7 +40,7 @@
 
 
 .UserName {
-  padding: 5%;
+  padding: 3%;
   position: relative;
 }
 .UserName h3{
@@ -58,11 +57,11 @@
 }
 
 .voyage-text {
-  padding: 50px;
+  padding: 1%;
   position: relative;
   margin: auto;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 500;
   color: rgb(215, 245, 250);
   
 }
