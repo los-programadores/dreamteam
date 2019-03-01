@@ -57,19 +57,19 @@ class Navbar extends Component {
                     </div>
                     <div className="nav-but-wrap">
                         <Nav className="justify-content-center" activeKey="/home">
-    <Nav.Item>
-      <Nav.Link className="nav-item"><Link to="/home">Home</Link></Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link className="nav-item"><Link to="/voyages">Voyages</Link></Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link className="nav-item"><Link to="/gchat">Chat</Link></Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/">Log Out</Link></Nav.Link>
-    </Nav.Item>
-  </Nav>
+                            <Nav.Item>
+                                <Nav.Link className="nav-item"><Link to="/home">Home</Link></Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="nav-item"><Link to="/voyages">Voyages</Link></Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="nav-item"><Link to="/gchat">Chat</Link></Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/">Log Out</Link></Nav.Link>
+                            </Nav.Item>
+                        </Nav>
                     </div>
                 </div>
             </header>

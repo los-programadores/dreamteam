@@ -59,7 +59,7 @@ class Home extends Component {
         </Row>
         <Row className="yourVoyages">
           <Col lg={12} className="insert-voyage">
-            <YourVoyages voyage= {voyageComponent} time="Current Voyage"/>
+            <YourVoyages voyage= {voyageComponent} time="Current Voyages"/>
           </Col>
           </Row>
       </Container>
