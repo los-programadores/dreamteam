@@ -32,11 +32,11 @@
 }
 .voyages-time {
   font-family: 'Baloo', cursive;
-  font-size: 2.5em;
+  font-size: 40px;
 }
 .voyages-data{
   text-align: center;
-  padding: 40px;
+  padding: 3%;
 } 
 
 
@@ -46,12 +46,13 @@
 }
 .UserName h3{
   font-family: 'Baloo', cursive;
-  font-size: 450%;
+  font-size: 65px;
   position: relative;
+  padding: 2%
 }
 
 .UserName h1{
-  font-size: 250%;
+  font-size: 40px;
   position: relative;
   justify-content: center;
 }
@@ -60,14 +61,14 @@
   padding: 50px;
   position: relative;
   margin: auto;
-  font-size: 200%;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 600;
   color: rgb(215, 245, 250);
   
 }
 .flow-text {
   margin: auto;
-  padding: 20px;
+  padding: 1%;
 }
 .row {
   margin: 0px;

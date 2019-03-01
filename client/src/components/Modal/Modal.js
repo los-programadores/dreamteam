@@ -25,7 +25,7 @@ class ModalComponent extends Component {
     render() {
         return (
             <>
-                <Button variant="outline-primary" onClick={this.handleShow}>
+                <Button variant="primary" onClick={this.handleShow}>
                     Learn More
                 </Button>
 
@@ -41,13 +41,13 @@ class ModalComponent extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Row>
-                            <Col lg={12} className="content-section-heading">
+                            <Col className="content-section-heading">
                                 <h2>How It Works</h2>
                             </Col>
                         </Row>
                         <br />
                         <Row>
-                            <Col lg={12} className="modal-left">
+                            <Col className="modal-left">
                                 <span className="modal-icon">
                                     <i className="material-icons orange600">card_travel</i>
                                 </span>
@@ -58,7 +58,7 @@ class ModalComponent extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={12} className="modal-center">
+                            <Col className="modal-center">
                                 <span className="modal-icon">
                                     <i className="material-icons orange600">perm_contact_calendar</i>
                                 </span>
@@ -69,7 +69,7 @@ class ModalComponent extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={12} className="modal-right">
+                            <Col className="modal-right">
                                 <span className="modal-icon">
                                     <i className="material-icons orange600">airplanemode_active</i>
                                 </span>
