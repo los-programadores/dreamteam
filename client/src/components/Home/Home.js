@@ -19,16 +19,7 @@ class Home extends Component {
     userName: "",
     voyages: []
   };
-  // renderChat= ()=> {
 
-  // }
-  // sendVoyage = (e) => {
-  //   let id = e.target.className;
-  //   renderChat(id){
-
-  //   }
-
-  // }
 
   componentDidMount() {
     const user = firebaseauth.auth().currentUser.uid;
@@ -54,6 +45,10 @@ class Home extends Component {
       }));
     });
 
+  }
+
+  sendVoyage = (e) => {
+    this.props.history.push(`/gchat/${e.target.className}`)
   }
   render() {
     return (

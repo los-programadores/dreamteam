@@ -73,7 +73,7 @@ class App extends Component {
           <PrivateRouteLanding exact path="/guides" component={GuideSelect} authenticated={this.state.authenticated} />
           <Route exact path="/signup" component={SignUpUser} authenticated={this.state.authenticated} />
           <Route exact path="/signup-guide" component={SignUpGuide} authenticated={this.state.authenticated} />
-          <PrivateRouteLanding exact path="/gchat" component={Chat} authenticated={this.state.authenticated} />
+          <PrivateRouteLanding exact path="/gchat/:voyageID" component={Chat} authenticated={this.state.authenticated} />
         </div>
       </Router>
     )
