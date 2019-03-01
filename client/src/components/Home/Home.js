@@ -58,27 +58,11 @@ class Home extends Component {
           </Col>
         </Row>
         <Row className="yourVoyages">
-          <Col lg={4} className="insert-voyage">
-            <YourVoyages
-              time="Past"
-            />
+          <Col lg={12} className="insert-voyage">
+            <YourVoyages time="Current Voyage"/>
+            {voyageComponent}
           </Col>
-          <Col lg={4} className="insert-voyage">
-            <YourVoyages
-              time="Current"
-
-            />
-            <div>
-              {voyageComponent}
-            </div>
-          </Col>
-          <Col lg={4} className="insert-voyage">
-            <YourVoyages
-              time="future"
-
-            />
-          </Col>
-        </Row>
+          </Row>
       </Container>
     )
   }
