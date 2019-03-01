@@ -24,7 +24,7 @@ class Landing extends Component {
                                 Hire anyone in the world, to show you the world.
                         </h4>
                             <p className="grey-text text-darken-3 animated fadeIn delay-2s">
-                                Connect with professional translators from all walks of life, united by a shared love of travel.
+                                Connect with professional guides from all walks of life, united by a shared love of travel.
                         </p>
                         </span>
                     </Col>
