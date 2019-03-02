@@ -34,10 +34,4 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  createVoyage: function (req, res) {
-    db.User
-      .findOneAndUpdate({ uid: req.params.id }, { $push: { voyages: req.body } })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
 };

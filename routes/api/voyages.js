@@ -8,10 +8,13 @@ router.route("/")
 
 // Matches with "/api/voyages/:id"
 router
+    .route("/chat/:voyageID")
+    .get(voyagesController.findVoyage)
+    .post(voyagesController.pushChat);
+
+router
     .route("/:id")
     .get(voyagesController.findAll)
 //   .delete(voyagesController.remove);
-router
-    .route("/:vid")
-    .get(voyagesController.findVoyage);
+
 module.exports = router;

@@ -13,7 +13,7 @@ function CardComponent(props) {
             <Card style={{
                 width: '18rem',
                 borderRadius: "25px",
-                background: "rgba(255, 255, 255, 0.5)",
+                background: "rgba(255, 255, 255, 0.7)",
                 border: "2px black solid",
                 boxShadow: "3px 3px black"
             }}>
@@ -33,7 +33,7 @@ function CardComponent(props) {
                         borderRadius: "50px",
                         padding: "5px",
                         letterSpacing: " 1px",
-                    }} variant="primary" onClick={props.onClick} id={props.uid}>Hire me for ${props.hourlyRate}/hr.</button>
+                    }} variant="primary" onClick={props.onClick} className={props.name} id={props.uid}>Hire me for ${props.hourlyRate}/hr.</button>
                 </Card.Body>
             </Card>
         </div >

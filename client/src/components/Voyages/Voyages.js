@@ -15,12 +15,14 @@ function Voyages(props) {
                 <Link
                     to="/voyages"
                     style={{
-                         width: "26%",
+                         width: "35%",
                                 height: "10%",
                                 borderRadius: "50px",
                                 letterSpacing: "1%",
-                                padding: "2%",
+                                padding: "3%",
                                 fontSize: "60%",
+                                justifyContent: "center",
+                                display: "inline-block",
                     }}
                     className="btn btn-large waves-effect hoverable accent-1"
                 >Create Voyage
