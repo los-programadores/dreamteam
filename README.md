@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello World
 
-## Available Scripts
+# Project Overview
+Hello World is a full stack application running working under the MERN stack, using Firebase authentication for user sign in. The goal of Hello World is to create an a different kind of travel experience for anyone traveling the world. With Hello World anyone can connect with a loca guide in the aread they wish to visit, and experience that authentic native local experience.
 
-In the project directory, you can run:
+# Issues or other things to add
+* Currently in the state that the app is in a guide can onlybe a guide for one location. Allowing guides to be in multiple locations on one account is a feature are looking to add in a later version. 
+* In an earlier build of the app we had Kayak integration so users could search for flights on our app, this had to be dropped due to tome constraints and efforsts needed to be diverted to other tasks
+* We had a bit of a hard time at first creating user authentication using passport, which got scrapped part way through early devolopemtn in favor of Firebase authentication
+* Currently once a user creates a voyage its locked in and cannot be edited. 
 
-### `npm start`
+# Getting Started
+A test account is available is you just want to play in the app without signing up:
+```
+email: test@test.com
+pw: 123456
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# User Experience
+## 1. Sign Up
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Once a user arrived to the landing page they will need to sign in/sign up 
 
-### `npm test`
+```
+picture to follow
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+After sign up users will be taken to the Home page where they can begin creating Voyages. 
 
-### `npm run build`
+## 2. Voyages
+```
+picture to follow
+```
+On the home screen a user can click on the Create Voyage button below their name this will redirect them to the Voyage creation page. Here they will be promted to fill out the form that will be sent to their guide, on the form they will first be promted to enter a location, once they enter a location this will load all guide in near or experts in that region. 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+pciture to follow
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once a user selects a location they will see every guide that is familiar with that location as well as the going rate for that guides services and their expertise, like food or architecture, which they can then decide if this lines up with what they want for in their trip. Once the Voyage form is filled it is created and sent to the guide that was chosen, this will then redirect the user to their home page where they will see their active Voyages on the bottom. 
 
-### `npm run eject`
+```
+picture to folow
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The Voyage will list the city where they wish to go and a short description below it to better identify the Voyage in case of multiple trips to the same location. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3. Communicating with Guides
+On the home page a user can click on their current Voyage this will take the user to a 1 on 1 chat page that will connect them with their guide. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+picture to follow
+```
+On the page will also be the Voyage in question so both the user and guide can reference it and coordinate the trip. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Built With
+* Mongo
+* Express
+* React
+* Node.js
+* Firebase
+* Google Maps
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+NPMs
+1. animate.css: https://www.npmjs.com/package/animate.css
+1. axios: https://www.npmjs.com/package/axios
+1. concurrently: https://www.npmjs.com/package/concurrently
+1. if-env: https://www.npmjs.com/package/if-env
+1. mongoose: https://www.npmjs.com/package/mongoose 
+1. nodemon: https://www.npmjs.com/package/nodemon
+1. react-bootstrap: https://www.npmjs.com/package/react-bootstrap
+1. react-dom: https://www.npmjs.com/package/react-dom
+1. react-router: https://www.npmjs.com/package/react-router
+1. react-router-dom: https://www.npmjs.com/package/react-router-dom
+1. react-scripts: https://www.npmjs.com/package/react-scripts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Author:
+* Ben DeLong - bdeLong/github. email: bendelong45@gmail.com
+* Hugo Villalobos - erithr/github. email: vshugo08@gmail.com
+* Sergio Ontiveros - sergio23jr. email: sergio23jr@gmail.com
+* Edgar Reynaga - Ticola. email: ticola.space@gmail.com
