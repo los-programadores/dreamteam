@@ -1,3 +1,10 @@
+
+body {
+    height: 100%;
+    background-image: url("http://www.4usky.com/data/out/99/164899029-vector-wallpapers.jpeg");
+
+}
+
 .header{
     font-family: 'Baloo', cursive;
     color: rgb(253, 217, 56);
@@ -13,10 +20,10 @@
 .voyagePage{
     height: 100%;
     /* background-image: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg"); */
-    background-image: url("http://www.4usky.com/data/out/99/164899029-vector-wallpapers.jpeg");
+    /* background-image: url("http://www.4usky.com/data/out/99/164899029-vector-wallpapers.jpeg"); */
     background-size: cover;
     margin: 0, 0, 0, 0;
-    padding: 0;
+    /* padding-bottom: 20%; */
 }
 
 .formDiv{
