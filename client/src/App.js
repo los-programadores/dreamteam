@@ -11,8 +11,8 @@ import { PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
 import Voyages from "./components/VoyagesPage/Voyages"
 import GuideSelect from "./components/GuideSelect"
-import UserChat from "./components/UserChat"
-import GuideChat from "./components/GuideChat"
+import UserChat from "./components/Chat/UserChat"
+import GuideChat from "./components/Chat/GuideChat"
 
 
 

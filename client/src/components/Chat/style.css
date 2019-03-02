@@ -1,0 +1,95 @@
+.chatContainer{
+    font-family: 'Baloo', cursive;
+    background-size: cover;   
+    height: 100%;
+    background: url("https://wallpapers-house.com/data/out/10/wallpaper2you_405736.jpg");
+}
+.voyageinfo{
+    margin: 20px;
+    padding: 20px;
+}
+
+.chat{
+    margin: 20px;
+    padding: 40px;
+}
+
+.voyageinfo{
+    margin-top: 5%;
+    margin-bottom: 0%;
+    padding: 20px;
+    border-radius: 75px;
+    background: rgba(255, 255, 255, 0.7);
+}
+.voyageinfo p{
+    font-size: 20px;
+}
+
+.chat{
+    margin-top: 5%;
+    margin-bottom: 0%;
+    padding: 20px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#chatbtn{
+    background-color: #F76C6C;
+    width: 25%;
+    height: 8%;
+    border-radius: 50px;
+    letter-spacing: 1%;
+    padding: 2%;
+    font-size: 100%;
+}
+
+#messages{
+    font-family: 'Concert One', cursive;
+    color:#374785;
+}
+.guidechat{
+    margin-top: 2%;
+    font-family: 'Baloo', cursive;
+    color: rgb(253, 217, 56);
+    text-decoration: underline;
+}
+.user-guide{
+    font-family: 'Baloo', cursive;
+    text-decoration: underline;
+}
+
+.messageChat{
+    margin-top: 5%;
+}
+
+.textform{
+margin-top: 5%;
+}
+
+.details{
+    margin-top: 1%;
+}
+.chatHolder{
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    border-radius: 12px;
+    height:300px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.response{
+    margin: 0 auto;
+    text-align: center;
+    /* display: inline-flex; */
+    margin: 1%;
+    /* color: white; */
+    border-radius: 50px;
+    padding: 1%;
+    /* background: blue; */
+}
+
+.chatter{
+    color: #374785;
+}
