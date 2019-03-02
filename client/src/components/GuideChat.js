@@ -47,7 +47,6 @@ class Chat extends Component {
     };
 
     pushMessage = event => {
-        event.preventDefault();
         const message = {
             message: event.target.message.value,
             userName: this.state.userName
