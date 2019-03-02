@@ -59,7 +59,7 @@ class Home extends Component {
           </Col>
           <Col lg={12} className="UserName">
             <h1>Welcome, </h1>
-            <h3 className="animated zoomIn delay-1s">User Testing{this.state.userName}</h3>
+            <h3 className="animated zoomIn delay-1s">{this.state.userName}</h3>
           </Col>
         </Row>
         <Row className="createVoyages">
