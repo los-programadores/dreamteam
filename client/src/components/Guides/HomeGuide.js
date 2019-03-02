@@ -31,7 +31,8 @@ class HomeGuide extends Component {
             voyageComponent = this.state.voyages.map((voyageObject, i) =>
               (<div key={i} className={voyageObject._id} onClick={this.sendVoyage}>
                 <h1 className={voyageObject._id} >{voyageObject.location}</h1>
-                <p>{voyageObject.information.description}</p>
+                <p className={voyageObject._id}>{voyageObject.information.description}</p>
+                <p className={voyageObject._id}>Traveler: {voyageObject.userName}</p>
               </div>
               )
             )
