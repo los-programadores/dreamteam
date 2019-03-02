@@ -1,11 +1,11 @@
 Hello World
 
 # Project Overview
-Hello World is a full stack application running working under the MERN stack, using Firebase authentication for user sign in. The goal of Hello World is to create an a different kind of travel experience for anyone traveling the world. With Hello World anyone can connect with a loca guide in the aread they wish to visit, and experience that authentic native local experience.
+Hello World is a full stack application running working under the MERN stack, using Firebase authentication for user sign in. The goal of Hello World is to create an a different kind of travel experience for anyone traveling the world. With Hello World anyone can connect with a local guide in the aread they wish to visit, and experience that authentic native local experience.
 
 # Issues or other things to add
-* Currently in the state that the app is in a guide can onlybe a guide for one location. Allowing guides to be in multiple locations on one account is a feature are looking to add in a later version. 
-* In an earlier build of the app we had Kayak integration so users could search for flights on our app, this had to be dropped due to tome constraints and efforsts needed to be diverted to other tasks
+* Currently in the state that the app is in a guide can only be a guide for one location. Allowing guides to be in multiple locations on one account is a feature are looking to add in a later version. 
+* In an earlier build of the app we had Kayak integration so users could search for flights on our app, this had to be dropped due to time constraints and efforts needed to be diverted to other tasks
 * We had a bit of a hard time at first creating user authentication using passport, which got scrapped part way through early devolopemtn in favor of Firebase authentication
 * Currently once a user creates a voyage its locked in and cannot be edited. 
 
