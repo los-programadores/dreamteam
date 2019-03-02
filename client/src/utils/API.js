@@ -19,6 +19,10 @@ export default {
     return axios.get(`/api/voyages/${id}`);
   },
 
+  getGuideVoyages: function (id) {
+    return axios.get(`/api/voyages/guides/${id}`);
+  },
+
   // Gets all guides
   getGuides: function (location) {
     return axios.get(`/api/guides/getguides/${location}`);

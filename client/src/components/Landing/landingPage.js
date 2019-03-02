@@ -20,10 +20,10 @@ class Landing extends Component {
                 <Row className="row">
                     <Col className="title">
                         <span className="flow-text">
-                            <h4 className="animated pulse delay-1s">
+                            <h4 className="animated fadeIn delay-.5s">
                                 Hire anyone in the world, to show you the world.
                         </h4>
-                            <p className="grey-text text-darken-3 animated fadeIn delay-2s">
+                            <p className="grey-text text-darken-3 animated fadeIn delay-1s">
                                 Connect with professional guides from all walks of life, united by a shared love of travel.
                         </p>
                         </span>
@@ -45,11 +45,11 @@ class Landing extends Component {
                         >Register
                             </Link>
                     </Col>
-                    <Col  className="flow-text">
+                    <Col className="flow-text">
                         <Link
                             to="/LogIn"
                             style={{
-                               width: "15%",
+                                width: "15%",
                                 height: "10%",
                                 borderRadius: "50px",
                                 letterSpacing: "1%",

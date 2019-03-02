@@ -6,7 +6,7 @@
     
 }
 .heading{
-    padding-top: 5%;
+    padding-top: 2%;
     font-size: 200%;
 }
 
@@ -20,10 +20,10 @@
 }
 
 .formDiv{
-    margin-left: 5%;
+    margin-top: 10px;
     margin-bottom: 10px;
     height: 100%;
-    padding: 50px;
+    /* padding: 50px; */
     border-radius: 100px;
     /* background: rgba(2, 178, 247, .5) */
     background: rgba(255, 255, 255, 0.7);
@@ -35,7 +35,7 @@
 }
 label b{
     letter-spacing: 1px;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Baloo', cursive;
     color: rgb(51, 51, 51);
 }
@@ -53,6 +53,7 @@ textarea{
 }
 #submitbtn{
     background-color: #F76C6C;
+    margin-bottom: 10px;
     width: 25%;
     height: 8%;
     border-radius: 50px;
@@ -62,4 +63,12 @@ textarea{
 }
 #info{
     padding-left: 8%;
+}
+
+.guide-holder{
+    padding-left: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 460px;
+    width: 325px;
 }

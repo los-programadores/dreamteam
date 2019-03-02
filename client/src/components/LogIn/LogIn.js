@@ -37,6 +37,9 @@ class Login extends Component {
                                 <b>Login</b> below
                             </h4>
                             <p className="grey-text text-darken-1">
+                                Are you a Guide? <Link to="/loginGuide"><b>Login here</b></Link>
+                            </p>
+                            <p className="grey-text text-darken-1">
                                 Don't have an account?
                             <Link to="/signup">Register</Link>
                             </p>
@@ -46,7 +49,7 @@ class Login extends Component {
                     <form onSubmit={this.handleSignUp}>
 
                         <Row className="row">
-                            <Col  className="input-field">
+                            <Col className="input-field">
                                 <input
                                     name="email"
                                     type="email"
@@ -56,7 +59,7 @@ class Login extends Component {
                         </Row>
 
                         <Row className="row">
-                            <Col  className="input-field">
+                            <Col className="input-field">
                                 <input
                                     name="password"
                                     type="password"

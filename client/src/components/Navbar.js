@@ -13,7 +13,6 @@ class Navbar extends Component {
         };
 
         this.showMenu = this.showMenu.bind(this);
-        // this.closeMenu = this.closeMenu.bind(this);
     }
 
     handleLogOut = () => {
@@ -28,20 +27,10 @@ class Navbar extends Component {
         this.setState({ showMenu: true });
     }
 
-    // closeMenu(event) {
-    //     if (!this.dropdownMenu.contains(event.target)) {
 
-    //         this.setState({ showMenu: false }, () => {
-    //             document.removeEventListener('click', this.closeMenu);
-    //         });
-
-    //     }
-    // }
 
     render() {
         if (this.state.navigateLogIn) {
-            console.log("User has logged out render");
-            //return < Redirect to="/" />
         }
 
         return (<div className="container">

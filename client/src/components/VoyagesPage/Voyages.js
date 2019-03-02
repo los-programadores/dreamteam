@@ -41,9 +41,7 @@ export default class Voyages extends Component {
     // loadGuides = () => {
     // };
     guideChosen = (e) => {
-        console.log('we got there')
         this.setState({ guideID: e.target.id, guideName: e.target.className }, function () {
-            console.log(this.state);
         })
     }
     handlePlaceChanged() {
@@ -51,8 +49,7 @@ export default class Voyages extends Component {
         this.setState({ chosenLocation: place.vicinity }, function () {
             API.getGuides(this.state.chosenLocation)
                 .then(res => this.setState({ guides: res.data }, function () {
-                    guideComponent = this.state.guides.map((guideobject, i) => <CardComponent {...guideobject} key={i} onClick={this.guideChosen} />)
-                    console.log(this.state.chosenLocation)
+                    guideComponent = <div className="guide-holder">{this.state.guides.map((guideobject, i) => <CardComponent {...guideobject} key={i} onClick={this.guideChosen} />)}</div>
                     this.forceUpdate();
                 }))
                 .catch(err => console.log(err));
@@ -73,7 +70,6 @@ export default class Voyages extends Component {
             userName: this.state.userName,
             guideName: this.state.guideName
         }
-        // console.log(this.state.uid, voyageData);
         API.saveVoyage(voyageData).then(res => this.props.history.push(`/gchat/${res.data._id}`));
 
     }
@@ -81,7 +77,6 @@ export default class Voyages extends Component {
         return (
             <Container className="voyagePage" fluid="true">
                 <NavBar></NavBar>
-                <hr></hr>
 
                 <Row>
                     <Col className="header">
@@ -92,7 +87,7 @@ export default class Voyages extends Component {
                 <br></br>
 
                 <Row>
-                    <Col className="text-center formDiv" md="auto">
+                    <Col className="text-center formDiv" md={6}>
 
                         <Row>
                             <Col>
@@ -136,11 +131,7 @@ export default class Voyages extends Component {
 
                         </Form>
                     </Col>
-
-                    <Col id="info">
-                        {guideComponent}
-                    </Col>
-
+                    <div md={6}>{guideComponent}</div>
                 </Row>
             </Container>
 

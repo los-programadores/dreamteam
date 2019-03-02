@@ -11,7 +11,8 @@ import { PrivateRouteLanding } from "./components/PrivateRoute"
 import firebaseauth from "./firebase"
 import Voyages from "./components/VoyagesPage/Voyages"
 import GuideSelect from "./components/GuideSelect"
-import Chat from "./components/GuideChat"
+import UserChat from "./components/UserChat"
+import GuideChat from "./components/GuideChat"
 
 
 
@@ -68,12 +69,13 @@ class App extends Component {
           <PrivateRouteLanding exact path="/home-guide" component={HomeGuide} authenticated={this.state.authenticated} />
           <Route exact path="/" component={Landing} authenticated={this.state.authenticated} />
           <Route exact path="/login" component={Login} authenticated={this.state.authenticated} />
-          <Route exact path="/login-guide" component={LoginGuide} authenticated={this.state.authenticated} />
+          <Route exact path="/loginGuide" component={LoginGuide} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/voyages" component={Voyages} authenticated={this.state.authenticated} />
           <PrivateRouteLanding exact path="/guides" component={GuideSelect} authenticated={this.state.authenticated} />
           <Route exact path="/signup" component={SignUpUser} authenticated={this.state.authenticated} />
-          <Route exact path="/signup-guide" component={SignUpGuide} authenticated={this.state.authenticated} />
-          <PrivateRouteLanding exact path="/gchat/:voyageID" component={Chat} authenticated={this.state.authenticated} />
+          <Route exact path="/signupGuide" component={SignUpGuide} authenticated={this.state.authenticated} />
+          <PrivateRouteLanding exact path="/gchat/:voyageID" component={UserChat} authenticated={this.state.authenticated} />
+          <PrivateRouteLanding exact path="/gchatg/:voyageID" component={GuideChat} authenticated={this.state.authenticated} />
         </div>
       </Router>
     )

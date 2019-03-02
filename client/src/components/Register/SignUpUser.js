@@ -41,7 +41,11 @@ class SignUpUser extends Component {
               <b>Register</b> below
                     </h4>
             <p className="grey-text text-darken-1">
-              Already have an account? <Link to="/login">Log in</Link>
+              Already have an account? <Link to="/login"> Log in</Link>
+            </p>
+            <p className="grey-text text-darken-1">
+              Looking to become a guide?
+                            <Link to="/signupGuide"> Register</Link>
             </p>
           </Col>
         </Row>
