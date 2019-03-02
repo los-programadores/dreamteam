@@ -17,4 +17,8 @@ router
     .get(voyagesController.findAll)
 //   .delete(voyagesController.remove);
 
+router
+    .route("/guides/:id")
+    .get(voyagesController.findAllGuideVoyages)
+
 module.exports = router;

@@ -5,11 +5,9 @@ import Voyages from "../Voyages/Voyages";
 import YourVoyages from "../YourVoyages/YourVoyages";
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
-import Chat from "../GuideChat"
 import Col from "react-bootstrap/Col";
 import API from "../../utils/API";
 import Navbar from "../Navbar/Navbar";
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import "./Home.css";
 
 let voyageComponent;
@@ -72,7 +70,7 @@ class Home extends Component {
         </Row>
         <Row className="yourVoyages">
           <Col lg={12} className="insert-voyage">
-            <YourVoyages voyage= {voyageComponent} time="Current Voyages"/>
+            <YourVoyages voyage={voyageComponent} time="Current Voyages" />
 
           </Col>
         </Row>
