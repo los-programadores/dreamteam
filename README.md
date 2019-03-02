@@ -22,8 +22,7 @@ pw: 123456
 Once a user arrived to the landing page they will need to sign in/sign up 
 
 ```
-picture to follow
-
+![“HelloWorld”](screenshots/)
 ```
 After sign up users will be taken to the Home page where they can begin creating Voyages. 
 
