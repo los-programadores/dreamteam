@@ -36,10 +36,10 @@ class Login extends Component {
                             <h4>
                                 <b>Login</b> below
                             </h4>
-                            <p className="grey-text text-darken-1">
+                            <p className="loginPTag grey-text text-darken-1">
                                 Are you a Guide? <Link to="/loginGuide"><b>Login here</b></Link>
                             </p>
-                            <p className="grey-text text-darken-1">
+                            <p className="loginPTag grey-text text-darken-1">
                                 Don't have an account?
                             <Link to="/signup">Register</Link>
                             </p>
