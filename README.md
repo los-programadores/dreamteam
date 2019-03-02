@@ -21,29 +21,26 @@ pw: 123456
 
 Once a user arrived to the landing page they will need to sign in/sign up 
 
-```
-![“HelloWorld”](screenshots/)
-```
+![“Sing UP”](screenshots/sign-in.PNG)
+
+
 After sign up users will be taken to the Home page where they can begin creating Voyages. 
 
 ## 2. Voyages
-```
-picture to follow
-```
+
+![“HelloWorld”](screenshots/home.PNG)
+
 On the home screen a user can click on the Create Voyage button below their name this will redirect them to the Voyage creation page. Here they will be promted to fill out the form that will be sent to their guide, on the form they will first be promted to enter a location, once they enter a location this will load all guide in near or experts in that region. 
 
-```
-pciture to follow
 
-```
+![“HelloWorld”](screenshots/voyage.PNG)
 
-Once a user selects a location they will see every guide that is familiar with that location as well as the going rate for that guides services and their expertise, like food or architecture, which they can then decide if this lines up with what they want for in their trip. Once the Voyage form is filled it is created and sent to the guide that was chosen, this will then redirect the user to their home page where they will see their active Voyages on the bottom. 
 
-```
-picture to folow
-```
 
-The Voyage will list the city where they wish to go and a short description below it to better identify the Voyage in case of multiple trips to the same location. 
+Once a user selects a location they will see every guide that is familiar with that location as well as the going rate for that guides services and their expertise, like food or architecture, which they can then decide if this lines up with what they want for in their trip. Once the Voyage form is filled it is created and sent to the guide that was chosen, this will then redirect the user to the chat page where they can chat with their guide, or they can go to their home page where they will see their active Voyages on the bottom. The Voyage will list the city where they wish to go and a short description below it to better identify the Voyage in case of multiple trips to the same location. 
+
+![“HelloWorld”](screenshots/voyages.PNG)
+
 
 ## 3. Communicating with Guides
 On the home page a user can click on their current Voyage this will take the user to a 1 on 1 chat page that will connect them with their guide. 
