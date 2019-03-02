@@ -97,6 +97,7 @@ class UserChat extends Component {
 
                         </div>
                     </Col>
+
                     <Col className="chat">
                         <div className="messageChat">
                             <h1 id="messages" >Messages</h1>
@@ -105,8 +106,10 @@ class UserChat extends Component {
                                 {this.state.chat.map((chatMessage, i) => <p key={i}><span className="chatter">{chatMessage.userName} Says:</span> <div className="response"> {chatMessage.message}</div></p>)}
                             </div>
                             <form className="textform" onSubmit={this.pushMessage}>
+
                                 <textarea name="message" placeholder="Leave a message for your guide!" />
                                 <button id="chatbtn" type="submit">Send Message</button>
+
                             </form>
                         </div>
                     </Col>

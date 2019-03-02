@@ -3,6 +3,9 @@ import API from "../../utils/API";
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./style.css";
+import Navbar from "../Navbar/index"
+
 
 
 class GuideChat extends Component {
@@ -63,44 +66,53 @@ class GuideChat extends Component {
 
   render() {
     return (
-      <Container>
+      <Container fluid="true" className="chatContainer">
+
         <Row>
           <Col>
-            <h1 className="text-center" >Chat with Guide</h1>
+            <Navbar></Navbar>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <h1 className="guidechat text-center" >Chat with User</h1>
           </Col>
         </Row>
 
         <Row>
 
-          <Col md="auto">
+          <Col className="voyageinfo" md="auto">
 
-            <h1>{this.state.travelerName}'s Voyage to {this.state.voyageLocation}</h1>
-            <h2>Details</h2>
-            <p>Traveler: {this.state.travelerName} </p>
-            <p>Location: {this.state.voyageLocation}</p>
-            <p>Descripton: {this.state.voyageDescription}</p>
-            <p>Languages {this.state.travelerName} needs support with: {this.state.languages}</p>
-            <p>Your Information:</p>
-            <p>Your Expertise: {this.state.guideInfo.expertise}</p>
-            <p>Your Languages: {this.state.guideInfo.languages}</p>
-            <p>Your Rate: ${this.state.guideInfo.hourlyRate}/hour </p>
+            <div style={{ marginBottom: "10px" }} className="details">
+              <h2 className="user-guide">{this.state.travelerName}'s Voyage to {this.state.voyageLocation}</h2>
+              <h2>Details</h2>
+              <p>Traveler: {this.state.travelerName} </p>
+              <p>Location: {this.state.voyageLocation}</p>
+              <p>Descripton: {this.state.voyageDescription}</p>
+              <p>Languages {this.state.travelerName} needs support with: {this.state.languages}</p>
+              <h2>Your Information</h2>
+              <p>Your Expertise: {this.state.guideInfo.expertise}</p>
+              <p>Your Languages: {this.state.guideInfo.languages}</p>
+              <p>Your Rate: ${this.state.guideInfo.hourlyRate}/hour </p>
+            </div>
 
           </Col>
 
-          <Col md="auto">
+          <Col className="chat">
+            <div className="messageChat">
+              <h1>Messages</h1>
+              <div className="chatHolder">
+                {this.state.chat.map((chatMessage, i) => <p key={i}><span className="chatter">{chatMessage.userName} Says:</span><div className="response"> {chatMessage.message}</div></p>)}
+              </div>
 
-            <h1>Messages</h1>
+              <form className="textform" onSubmit={this.pushMessage}>
 
-            <div>
-              {this.state.chat.map((chatMessage, i) => <p key={i}>{chatMessage.userName} Says: {chatMessage.message}</p>)}
+                <textarea name="message" placeholder="Leave a message for your user!" />
+                <button id="chatbtn" type="submit">Send Message</button>
+
+              </form>
             </div>
-
-            <form onSubmit={this.pushMessage}>
-
-              <textarea name="message" placeholder="Leave a message for your guide!" />
-              <button type="submit">Send Message</button>
-
-            </form>
           </Col>
         </Row>
 
