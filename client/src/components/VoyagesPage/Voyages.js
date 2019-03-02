@@ -75,7 +75,7 @@ export default class Voyages extends Component {
     }
     render() {
         return (
-            <Container className="voyagePage" fluid="true">
+            <div className="voyagePage" fluid="true">
                 <NavBar></NavBar>
 
                 <Row>
@@ -133,7 +133,7 @@ export default class Voyages extends Component {
                     </Col>
                     <div md={6}>{guideComponent}</div>
                 </Row>
-            </Container>
+            </div>
 
         )
     }
