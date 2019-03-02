@@ -19,22 +19,3 @@ export function PrivateRouteLanding({
     />
   );
 }
-
-// export function PrivateRouteHome({
-//   component: Component,
-//   authenticated,
-//   ...rest
-// }) {
-//   return (
-//     <Route
-//       {...rest}
-//       render={props =>
-//         authenticated === false ? (
-//           <Component {...props} {...rest} />
-//         ) : (
-//             <Redirect to="/home" />
-//           )
-//       }
-//     />
-//   );
-// }

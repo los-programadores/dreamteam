@@ -6,8 +6,6 @@ import "../../styles/cardStyle.css"
 
 function CardComponent(props) {
 
-
-    console.log("props", props)
     return (
         <div>
             <Card style={{

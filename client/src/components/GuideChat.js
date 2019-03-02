@@ -19,7 +19,6 @@ class GuideChat extends Component {
   componentDidMount() {
     const voyageIDFromURL = this.props.match.params.voyageID;
     this.setState({ voyageID: voyageIDFromURL }, function () {
-      console.log(this.state.voyageID)
       API.getVoyage(this.state.voyageID)
         .then(res =>
           this.setState(
@@ -33,12 +32,10 @@ class GuideChat extends Component {
               languages: res.data.information.languages,
               chat: res.data.chat
             }, function () {
-              console.log(this.state)
               API.getGuide(this.state.guideID).then(res =>
                 this.setState(
                   { guideInfo: res.data }, function () {
                     this.forceUpdate();
-                    console.log(this.state)
                   }
                 ))
 
@@ -51,7 +48,6 @@ class GuideChat extends Component {
       message: event.target.message.value,
       userName: this.state.guideName
     }
-    console.log(message)
     event.target.message.value = "";
     if (message.message !== "") {
       API.postVoyageChat(this.state.voyageID, message).then(res => this.setState({ chat: res.data.chat }, () => {

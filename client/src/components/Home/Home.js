@@ -21,7 +21,6 @@ class Home extends Component {
 
   componentDidMount() {
     const user = firebaseauth.auth().currentUser.uid;
-    console.log(user)
 
     this.setState({ uid: user }, function () {
       API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }, function () {
@@ -37,7 +36,6 @@ class Home extends Component {
               </div>
               )
             )
-            console.log(this.state.voyages)
             this.forceUpdate();
           }))
 

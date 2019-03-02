@@ -27,9 +27,6 @@ class Navbar extends Component {
         event.preventDefault();
 
         this.setState({ showMenu: true });
-        //     , () => {
-        //     document.addEventListener('click', this.closeMenu);
-        // });
 
     }
 
@@ -44,30 +41,29 @@ class Navbar extends Component {
 
     render() {
         if (this.state.navigateLogIn) {
-            console.log("User has logged out render");
-            //return < Redirect to="/" />
+
         }
 
         return (
-        <div className="container">
-            <Nav sticky="top" className="cd-header" id="nav-nav">
-                <Nav sticky="top" className="header-wrapper">
-                    <div className="logo-wrap">
-                        <a href="/" className="hover-target"><span>Hello </span>World</a>
-                    </div>
-                    <div className="nav-but-wrap">
-                        <Nav className="justify-content-center" activeKey="/home">
-                            <Nav.Item>
-                                <Nav.Link className="nav-item"><Link to="/home">Home</Link></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/"><span>Log Out</span></Link></Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                    </div>
+            <div className="container">
+                <Nav sticky="top" className="cd-header" id="nav-nav">
+                    <Nav sticky="top" className="header-wrapper">
+                        <div className="logo-wrap">
+                            <a href="/" className="hover-target"><span>Hello </span>World</a>
+                        </div>
+                        <div className="nav-but-wrap">
+                            <Nav className="justify-content-center" activeKey="/home">
+                                <Nav.Item>
+                                    <Nav.Link className="nav-item"><Link to="/home">Home</Link></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/"><span>Log Out</span></Link></Nav.Link>
+                                </Nav.Item>
+                            </Nav>
+                        </div>
+                    </Nav>
                 </Nav>
-            </Nav>
-        </div>);
+            </div>);
     }
 }
 
