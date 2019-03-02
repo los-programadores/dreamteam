@@ -3,7 +3,13 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import firebaseauth from "../../firebase";
 import API from "../../utils/API";
+import "../LogIn/LogIn.css";
+import "../LogIn/TravelBackground.css";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 /* global google */
+
 
 class SignUpGuide extends Component {
   state = {
@@ -23,7 +29,6 @@ class SignUpGuide extends Component {
 
     this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
   }
-
 
   handlePlaceChanged() {
     const place = this.autocomplete.getPlace();
@@ -56,91 +61,106 @@ class SignUpGuide extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col s8 offset-s2">
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Guide Register</b> below
-                    </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login-guide"><b>Log in</b></Link>
-              </p>
-              <p className="grey-text text-darken-1">
-                Need a guide? <Link to="/signup"><b>Sign Up Here!</b></Link>
-              </p>
-            </div>
-            <form onSubmit={this.handleSignUp}>
-              <div className="input-field col s6">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Full Name"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="password2"
-                  type="password"
-                  placeholder="Confirm Password"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input ref={this.autocompleteInput} id="autocomplete" placeholder="Enter Your Location"
-                  type="text" name="location"></input>
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="expertise"
-                  type="text"
-                  placeholder="Enter your field(s) of expertise"
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="hourlyRate"
-                  type="text"
-                  placeholder="Enter your hourly rate."
-                />
-              </div>
-              <div className="input-field col s6">
-                <input
-                  name="languages"
-                  type="text"
-                  placeholder="Enter your languages spoken"
-                />
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}></div>
-              <button
-                style={{
-                  width: "140px",
-                  borderRadius: "50px",
-                  letterSpacing: "1px",
-                  padding: "10px"
-                }}
-                type="submit"
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >Sign up
-                </button>
-            </form>
 
-          </div>
-        </div>
-      </div>
+      <Container className="container-mark">
+        <Row className="row">
+          <Col className="Register">
+            <h4>
+              <b>Guide Register</b> below
+                    </h4>
+            <p className="grey-text text-darken-1">
+              Already a Guide? <Link to="/loginGuide"> Log in</Link>
+            </p>
+            <p className="grey-text text-darken-1">
+              Need a guide? <Link to="/signup"> Register</Link>
+            </p>
+          </Col>
+        </Row>
+        <form onSubmit={this.handleSignUp}>
+          <Row className="row">
+            <Col className="input-field">
+              <input
+                name="name"
+                type="text"
+                placeholder="Full Name"
+              />
+            </Col>
+            <Col className="input-field">
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+              />
+            </Col>
+          </Row>
+          <Row className="row">
+            <Col className="input-field">
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
+            </Col>
+            <Col className="input-field">
+              <input
+                name="password2"
+                type="password"
+                placeholder="Confirm Password"
+              />
+            </Col>
+          </Row>
+          <Row className="row">
+            <Col className="input-field">
+              <input
+                ref={this.autocompleteInput}
+                id="autocomplete"
+                name="location"
+                type="text"
+                placeholder="Where are you located?"
+              />
+            </Col>
+            <Col className="input-field">
+              <input
+                name="expertise"
+                type="text"
+                placeholder="Enter your field(s) of expertise"
+              />
+            </Col>
+          </Row>
+          <Row className="row">
+            <Col className="input-field">
+              <input
+                name="languages"
+                type="text"
+                placeholder="What languages are you fluent in?"
+              />
+            </Col>
+            <Col className="input-field">
+              <input
+                name="hourlyRate"
+                type="text"
+                placeholder="0.00"
+              />
+            </Col>
+          </Row>
+          <Row className="row-button">
+            <Col md={12} className="button"></Col>
+            <button
+              style={{
+                width: "15%",
+                height: "8%",
+                borderRadius: "50px",
+                letterSpacing: "1%",
+                padding: "2%",
+                fontSize: "100%",
+              }}
+              type="submit"
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >Sign up
+                </button>
+          </Row>
+        </form>
+      </Container >
     );
   }
 }
