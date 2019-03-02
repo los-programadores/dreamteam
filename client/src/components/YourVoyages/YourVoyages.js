@@ -7,15 +7,9 @@ import Col from "react-bootstrap/Col";
 
 function Voyages(props) {
     return (
-        <div className="yourVoyages">
-            <Row>
-                <Col lg={4} className="voyages-time">
-                    {props.time}
-                </Col>
-            </Row>
-
-            <Row>
-                <Col lg={4} className="voyages-data">
+        <div className="yourVoyages" style={{ overflow: "auto", height: "200px" }}>
+            <Row className="voyages-data">
+                <Col style={{ display: "inline" }}>
                     {props.voyage}
                 </Col>
             </Row>
