@@ -31,8 +31,8 @@ class Home extends Component {
         API.getVoyages(this.state.uid)
           .then(res => this.setState({ voyages: res.data }, function () {
 
-            voyageComponent = this.state.voyages.map(voyageObject =>
-              (<div className={voyageObject._id} onClick={this.sendVoyage}>
+            voyageComponent = this.state.voyages.map((voyageObject, i) =>
+              (<div key={i} className={voyageObject._id} onClick={this.sendVoyage}>
                 <h1 className={voyageObject._id} >{voyageObject.location}</h1>
                 <p>{voyageObject.information.description}</p>
               </div>

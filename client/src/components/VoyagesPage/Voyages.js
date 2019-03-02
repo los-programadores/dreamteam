@@ -19,7 +19,9 @@ export default class Voyages extends Component {
         uid: '',
         chosenLocation: '',
         guides: [],
-        guideID: ''
+        guideID: '',
+        userName: '',
+        guideName: ''
     }
     constructor(props) {
         super(props);
@@ -29,7 +31,9 @@ export default class Voyages extends Component {
     }
     componentDidMount() {
         const user = firebaseauth.auth().currentUser.uid;
-        this.setState({ uid: user });
+        this.setState({ uid: user }, function () {
+            API.getUser(user).then(res => this.setState({ userName: res.data.name }))
+        });
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current,
             { "types": ["geocode"] });
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
@@ -38,7 +42,7 @@ export default class Voyages extends Component {
     // };
     guideChosen = (e) => {
         console.log('we got there')
-        this.setState({ guideID: e.target.id }, function () {
+        this.setState({ guideID: e.target.id, guideName: e.target.className }, function () {
             console.log(this.state);
         })
     }
@@ -47,7 +51,7 @@ export default class Voyages extends Component {
         this.setState({ chosenLocation: place.vicinity }, function () {
             API.getGuides(this.state.chosenLocation)
                 .then(res => this.setState({ guides: res.data }, function () {
-                    guideComponent = this.state.guides.map(guideobject => <CardComponent {...guideobject} onClick={this.guideChosen} />)
+                    guideComponent = this.state.guides.map((guideobject, i) => <CardComponent {...guideobject} key={i} onClick={this.guideChosen} />)
                     console.log(this.state.chosenLocation)
                     this.forceUpdate();
                 }))
@@ -65,11 +69,13 @@ export default class Voyages extends Component {
                 interests: interests.value,
                 languages: languages.value
             },
-            guideID: this.state.guideID
+            guideID: this.state.guideID,
+            userName: this.state.userName,
+            guideName: this.state.guideName
         }
         // console.log(this.state.uid, voyageData);
-        API.saveVoyage(voyageData);
-        this.props.history.push("/home");
+        API.saveVoyage(voyageData).then(res => this.props.history.push(`/gchat/${res.data._id}`));
+
     }
     render() {
         return (

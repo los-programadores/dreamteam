@@ -28,10 +28,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   findVoyage: function (req, res) {
     db.Voyage
-      .findById({ _id: req.params.vid })
-      .then(dbModel => dbModel.remove())
+      .findById({ _id: req.params.voyageID })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  pushChat: function (req, res) {
+    db.Voyage
+      .findOneAndUpdate({ _id: req.params.voyageID }, { $push: { chat: req.body } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

@@ -4,23 +4,31 @@ const Schema = mongoose.Schema;
 const voyageSchema = new Schema({
   userID: {
     type: String,
-    required: true,
+    required: true
+  },
+  userName: {
+    type: String,
+    required: true
   },
   location: {
     type: String,
-    required: true,
+    required: true
   },
   guideID: {
     type: String,
-    required: true,
+    required: true
+  },
+  guideName: {
+    type: String,
+    required: true
   },
   information: {
     type: Object,
-    require: true,
+    require: true
   },
   chat: {
-    type: Object,
-    required: false
+    type: Array,
+    required: true
   }
 
 
