@@ -62,7 +62,7 @@ class Landing extends Component {
                     </Col>
                 </Row>
                 <Row className="row flow-text">
-                    <Col>
+                    <Col md={12}>
                         <Modal />
                     </Col>
                 </Row>

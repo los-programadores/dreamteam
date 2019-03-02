@@ -50,8 +50,8 @@ class Navbar extends Component {
 
         return (
         <div className="container">
-            <header className="cd-header">
-                <div className="header-wrapper">
+            <Nav sticky="top" className="cd-header" id="nav-nav">
+                <Nav sticky="top" className="header-wrapper">
                     <div className="logo-wrap">
                         <a href="/" className="hover-target"><span>Hello </span>World</a>
                     </div>
@@ -67,12 +67,12 @@ class Navbar extends Component {
                                 <Nav.Link className="nav-item"><Link to="/gchat">Chat</Link></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/">Log Out</Link></Nav.Link>
+                                <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/"><span>Log Out</span></Link></Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </div>
-                </div>
-            </header>
+                </Nav>
+            </Nav>
         </div>);
     }
 }
