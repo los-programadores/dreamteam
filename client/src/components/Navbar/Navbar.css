@@ -48,7 +48,7 @@ a:hover {
 	position: absolute;
 	display:block;
 	right:10px;
-	top: 50px;
+	top: 25px;
 	cursor: pointer;
 	
 }
@@ -73,7 +73,7 @@ a:hover {
 	position: relative;
 	display: inline-block;
 	padding-left: 15px;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 	margin-top: 26px;
 	transition : all 0.3s ease-out;
 	
