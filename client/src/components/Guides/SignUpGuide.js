@@ -33,7 +33,6 @@ class SignUpGuide extends Component {
   handlePlaceChanged() {
     const place = this.autocomplete.getPlace();
     this.setState({ location: place.vicinity });
-    console.log(this.state.location);
   }
 
   handleSignUp = async event => {

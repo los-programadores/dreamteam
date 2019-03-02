@@ -21,7 +21,6 @@ class Home extends Component {
 
   componentDidMount() {
     const user = firebaseauth.auth().currentUser.uid;
-    console.log(user)
 
     this.setState({ uid: user }, function () {
       API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }, function () {
@@ -37,7 +36,6 @@ class Home extends Component {
               </div>
               )
             )
-            console.log(this.state.voyages)
             this.forceUpdate();
           }))
 
@@ -61,7 +59,7 @@ class Home extends Component {
           </Col>
           <Col lg={12} className="UserName">
             <h1>Welcome, </h1>
-            <h3 className="animated zoomIn delay-1s">{this.state.userName}</h3>
+            <h3 className="animated zoomIn delay-1s">User Testing{this.state.userName}</h3>
           </Col>
         </Row>
         <Row className="createVoyages">
