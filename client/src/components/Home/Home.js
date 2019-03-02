@@ -21,7 +21,6 @@ class Home extends Component {
 
   componentDidMount() {
     const user = firebaseauth.auth().currentUser.uid;
-    console.log(user)
 
     this.setState({ uid: user }, function () {
       API.getUser(this.state.uid).then(res => this.setState({ userName: res.data.name }, function () {
@@ -31,12 +30,12 @@ class Home extends Component {
 
             voyageComponent = this.state.voyages.map((voyageObject, i) =>
               (<div key={i} className={voyageObject._id} onClick={this.sendVoyage}>
-                <h1 className={voyageObject._id} >{voyageObject.location}</h1>
+                <h1 className={voyageObject._id} >Destination: {voyageObject.location}</h1>
                 <p>{voyageObject.information.description}</p>
+                <p>Guide: {voyageObject.guideName}</p>
               </div>
               )
             )
-            console.log(this.state.voyages)
             this.forceUpdate();
           }))
 
