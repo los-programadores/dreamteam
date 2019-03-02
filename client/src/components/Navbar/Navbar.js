@@ -61,12 +61,6 @@ class Navbar extends Component {
                                 <Nav.Link className="nav-item"><Link to="/home">Home</Link></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className="nav-item"><Link to="/voyages">Voyages</Link></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link className="nav-item"><Link to="/gchat">Chat</Link></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
                                 <Nav.Link className="nav-item" onClick={this.handleLogOut.bind(this)}><Link to="/"><span>Log Out</span></Link></Nav.Link>
                             </Nav.Item>
                         </Nav>
