@@ -17,7 +17,7 @@ A test account is available if you just want to play in the app without signing 
 email: test@test.com
 pw: 123456
 ```
-#Live link: https://final-project-3.herokuapp.com/
+# Live link: https://final-project-3.herokuapp.com/
 
 # User Experience
 ## 1. Sign Up
